@@ -28,9 +28,6 @@ if (!isset($_SESSION)) {
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
 
-        <?php if ($_SESSION['rol'] == 1) { ?>
-        
-        <?php } ?>
 
         <li class="nav-item">
             <a class="nav-link" data-widget="fullscreen" href="#" role="button" id="fullwidget">
@@ -39,14 +36,14 @@ if (!isset($_SESSION)) {
             </a>
         </li>
 
-        <?php if ($_SESSION['rol'] == 1) { ?>
+        
         <li class="nav-item">
             <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
                 <i class="fas fa-th-list text-choco"></i>
                 <span class="badge badge-kiki navbar-badge ">4</span>
             </a>
         </li>
-        <?php } ?>
+        
 
         <li class="nav-item">
             <a class="nav-link" href="<?php echo RUTA_URL; ?>/Login/vaciar" role="button">

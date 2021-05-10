@@ -11,12 +11,20 @@
                 <form class="form-signin" action="<?php echo RUTA_URL ?>/Login/acceder" method="POST" autocomplete="off">
                     <br>
                     <label for="inputEmail" class="sr-only">Nombre del Alimento</label>
-                    <input type="text" id="inputNombreNuevo" name="nombreNuevo" class="form-control" placeholder="Nombre del Alimento" required >
-                    <br>
-                    <label for="inputEmail" class="sr-only">Categoría</label>
-                    <input type="text" id="categoriaAl" name="catgeoriaAl" class="form-control" autocomplete="off" placeholder="Categoria" required  >
+                    <input type="text" id="inputNombreNuevo" name="nombreNuevo" class="form-control" placeholder="Nombre del Alimento" required>
                     <br>
 
+                    <label for="inputEmail" class="sr-only">Categoría</label>
+                    <select class="js-example-basic-single" name="categoria" id="categoria">
+
+                    </select>
+
+                    <br>
+                    <label for="inputEmail" class="sr-only">Unidad de medida</label>
+                    <select class="js-example-basic-single" name="unidadMedida" id="unidadMedida">
+
+                    </select>
+                    <br>
                     <button class="btn btn-lg btn-warning btn-block" type="submit">Añadir</button>
                 </form>
             </div>

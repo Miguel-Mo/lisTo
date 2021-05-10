@@ -62,22 +62,12 @@ $.widget.bridge('uibutton', $.ui.button)
 <script src="<?php echo RUTA_URL; ?>/public/js/configuracion/cargaForms.js"></script>
 <script src="<?php echo RUTA_URL; ?>/public/js/configuracion/configuracion.js"></script>
 
-<!-- tareas_persona -->
-<script src="<?php echo RUTA_URL; ?>/public/js/tareas/timer.js"></script>
+<!-- jsAlimentos -->
+<script src="<?php echo RUTA_URL; ?>/public/js/tareas/addAlimentos.js"></script>
 
-<!-- <script>
-$(window).resize(function() {
-    let iconFull = $('#fullwidget > i').hasClass('fa-expand-arrows-alt');
-    console.log(iconFull);
-    if (screen.width < 1024 && iconFull == true) {
-        $('#fullwidget',document).click();
-    } else if (screen.width < 1280 && iconFull == true) {
-        $('#fullwidget',document).click();
-    } else if (screen.width > 1280 && iconFull == false) {
-        $('#fullwidget',document).click();
-    }
-});
-</script> -->
+
+<!-- Select2 -->
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 </body>
 

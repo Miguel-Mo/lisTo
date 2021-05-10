@@ -1,10 +1,15 @@
 <?php
 
 // Configuracion de acceso a la base de datos
-define('DB_HOST', '51.75.233.121');
-define('DB_USUARIO', 'admin_casakiki');
-define('DB_PASSWORD', 'Admin_casakiki2020$');
-define('DB_NOMBRE', 'admin_casakiki');
+// define('DB_HOST', '51.75.233.121');
+// define('DB_USUARIO', 'admin_casakiki');
+// define('DB_PASSWORD', 'Admin_casakiki2020$');
+// define('DB_NOMBRE', 'admin_casakiki');
+
+define('DB_HOST', '127.0.0.1:3307');
+define('DB_USUARIO', 'root');
+define('DB_PASSWORD', '');
+define('DB_NOMBRE', 'admin_listo');
 
 // Ruta de la aplicacion
 define('RUTA_APP', dirname(dirname(__FILE__)));
