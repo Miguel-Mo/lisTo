@@ -1,0 +1,27 @@
+<ul id="601ecc770bf7f">
+    <li style="background-color: rgb(180, 196, 52); color: rgb(17, 17, 17);">#b4c434</li>
+    <li style="background-color: rgb(92, 28, 44); color: rgb(238, 238, 238);">#5c1c2c</li>
+    <li style="background-color: rgb(100, 28, 44); color: rgb(238, 238, 238);">#641c2c</li>
+    <li style="background-color: rgb(128, 101, 58); color: rgb(238, 238, 238);">#80653a</li>
+    <li style="background-color: rgb(148, 140, 60); color: rgb(238, 238, 238);">#948c3c</li>
+    <li style="background-color: rgb(140, 116, 60); color: rgb(238, 238, 238);">#8c743c</li>
+    <li style="background-color: rgb(116, 64, 52); color: rgb(238, 238, 238);">#744034</li>
+    <li style="background-color: rgb(164, 168, 60); color: rgb(17, 17, 17);">#a4a83c</li>
+    <li style="background-color: rgb(105, 60, 52); color: rgb(238, 238, 238);">#693c34</li>
+    <li style="background-color: rgb(172, 188, 60); color: rgb(17, 17, 17);">#acbc3c</li>
+    <li style="background-color: rgb(156, 156, 60); color: rgb(238, 238, 238);">#9c9c3c</li>
+    <li style="background-color: rgb(108, 44, 44); color: rgb(238, 238, 238);">#6c2c2c</li>
+    <li style="background-color: rgb(180, 204, 52); color: rgb(17, 17, 17);">#b4cc34</li>
+    <li style="background-color: rgb(100, 44, 44); color: rgb(238, 238, 238);">#642c2c</li>
+    <li style="background-color: rgb(180, 200, 52); color: rgb(17, 17, 17);">#b4c834</li>
+    <li style="background-color: rgb(180, 200, 52); color: rgb(17, 17, 17);">#b4c834</li>
+    <li style="background-color: rgb(180, 200, 52); color: rgb(17, 17, 17);">#b4c834</li>
+    <li style="background-color: rgb(180, 200, 52); color: rgb(17, 17, 17);">#b4c834</li>
+    <li style="background-color: rgb(180, 200, 52); color: rgb(17, 17, 17);">#b4c834</li>
+    <li style="background-color: rgb(180, 200, 52); color: rgb(17, 17, 17);">#b4c834</li>
+    <li style="background-color: rgb(96, 32, 56); color: rgb(238, 238, 238);">#602038</li>
+    <li style="background-color: rgb(180, 200, 52); color: rgb(17, 17, 17);">#b4c834</li>
+    <li style="background-color: rgb(180, 200, 52); color: rgb(17, 17, 17);">#b4c834</li>
+    <li style="background-color: rgb(180, 200, 52); color: rgb(17, 17, 17);">#b4c834</li>
+    <li style="background-color: rgb(180, 200, 52); color: rgb(17, 17, 17);">#b4c834</li>
+</ul>
