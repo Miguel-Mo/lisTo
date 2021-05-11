@@ -10,24 +10,6 @@
         </div>
 
         <div class="col-lg-2 col-6 mt-1 mb-1">
-
-            <!-- <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                <label class="form-check-label" for="inlineCheckbox1"><i class="fas fa-cheese"></i> Lácteos</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                <label class="form-check-label" for="inlineCheckbox2"><i class="fas fa-carrot"></i> Vegetales</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                <label class="form-check-label" for="inlineCheckbox2"><i class="fas fa-drumstick-bite"></i> Carne</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                <label class="form-check-label" for="inlineCheckbox2"><i class="fas fa-fish"></i> Pescado</label>
-
-            </div> -->
             <div class="btn-group btn-group-toggle flex-wrap btn-block" data-toggle="buttons">
                 <label class="btn btn-primary">
                     <input type="checkbox" name="countries[]" value="España" autocomplete="off"> <i class="fas fa-cheese"></i>
@@ -47,7 +29,7 @@
         </div>
 
         <div class="col-lg-2 col-6">
-            <button type="button" data-toggle="modal" href="" data-target="#addAlimentoModal" class="btn btn-warning btn-block">Añadir alimento</button>
+            <button type="button" data-toggle="modal" href="" id="addAlimentoOpen" data-target="#addAlimentoModal" class="btn btn-warning btn-block">Añadir alimento</button>
         </div>
     </div>
     <div class="row">

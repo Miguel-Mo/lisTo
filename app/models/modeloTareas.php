@@ -30,4 +30,11 @@ class modeloTareas
         $resultado = $this->db->registros();
         return $resultado;
     }
+
+    public function insertNuevoAlimento($datos)
+    {
+        $this->db->query( 'INSERT INTO alimento_usuario (nombre, tipo, unidad_medida,idUsuario)
+        VALUES ("' . $datos["nombreNuevo"] . '", ' . $datos["categoria"] . ', ' . $datos["unidadMedida"] . ',' . $_SESSION['idUsuario'] . ')');
+        $this->db->execute();
+    }
 }

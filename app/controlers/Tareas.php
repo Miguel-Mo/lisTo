@@ -25,14 +25,21 @@ class Tareas extends Controlador
 
     public function obtenerTiposAlimento()
     {
-        echo  $this->modeloTareas->obtenerTiposAlimento();
-        
+        $tipos=$this->modeloTareas->obtenerTiposAlimento();
+        $unidades=$this->modeloTareas->obtenerUnidadesAlimento();
+        $resultado=[
+            'tipos'=> $tipos,
+            'unidades'=>  $unidades,
+        ];
+      
+        echo json_encode($resultado);
     }
 
-    public function obtenerUnidadesAlimento()
+    public function addNuevoAlimento()
     {
-        echo $this->modeloTareas->obtenerUnidadesAlimento();
-    }
+        $this->modeloTareas->insertNuevoAlimento($_POST);
+        $datos=[];
+        $this->vista('tareas/tareas', $datos);
 
- 
+    }
 }
