@@ -39,7 +39,7 @@ class Tareas extends Controlador
     {
         $this->modeloTareas->insertNuevoAlimento($_POST);
 
-        redireccionar('/tareas');
+        redireccionar('/Tareas');
     }
 
     public function obtenerTodosAlimentos()
