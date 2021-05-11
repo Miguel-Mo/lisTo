@@ -18,28 +18,40 @@ class Tareas extends Controlador
         }
 
         $datos = [
-        //    'alimentos' => $this->modeloTareas->obtenerAlimentos(),
+            //    'alimentos' => $this->modeloTareas->obtenerAlimentos(),
         ];
         $this->vista('tareas/tareas', $datos);
     }
 
     public function obtenerTiposAlimento()
     {
-        $tipos=$this->modeloTareas->obtenerTiposAlimento();
-        $unidades=$this->modeloTareas->obtenerUnidadesAlimento();
-        $resultado=[
-            'tipos'=> $tipos,
-            'unidades'=>  $unidades,
+        $tipos = $this->modeloTareas->obtenerTiposAlimento();
+        $unidades = $this->modeloTareas->obtenerUnidadesAlimento();
+        $resultado = [
+            'tipos' => $tipos,
+            'unidades' =>  $unidades,
         ];
-      
+
         echo json_encode($resultado);
     }
 
     public function addNuevoAlimento()
     {
         $this->modeloTareas->insertNuevoAlimento($_POST);
-        $datos=[];
-        $this->vista('tareas/tareas', $datos);
 
+        redireccionar('/tareas');
+    }
+
+    public function obtenerTodosAlimentos()
+    {
+        $defecto = $this->modeloTareas->obtenerAlimentosDefecto();
+        $usuario = $this->modeloTareas->obtenerAlimentosUsuario();
+        $resultado = [
+            'Xdefecto' => $defecto,
+            'Xusuario' =>  $usuario,
+        ];
+        print_r($resultado);
+        die;
+        echo json_encode($resultado);
     }
 }

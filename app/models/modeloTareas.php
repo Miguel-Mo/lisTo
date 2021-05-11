@@ -37,4 +37,21 @@ class modeloTareas
         VALUES ("' . $datos["nombreNuevo"] . '", ' . $datos["categoria"] . ', ' . $datos["unidadMedida"] . ',' . $_SESSION['idUsuario'] . ')');
         $this->db->execute();
     }
+
+    public function obtenerAlimentosDefecto()
+    {
+        $this->db->query('SELECT id,nombre,tipo FROM alimento a');
+
+        $resultado = $this->db->registros();
+        return $resultado;
+    }
+
+    public function obtenerAlimentosUsuario()
+    {
+        $this->db->query('SELECT id,nombre,tipo FROM alimento_usuario au WHERE idUsuario='.$_SESSION['idUsuario']);
+
+        $resultado = $this->db->registros();
+        return $resultado;
+    }
+
 }

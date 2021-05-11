@@ -32,8 +32,8 @@
             <button type="button" data-toggle="modal" href="" id="addAlimentoOpen" data-target="#addAlimentoModal" class="btn btn-warning btn-block">Añadir alimento</button>
         </div>
     </div>
-    <div class="row">
-        <div class="col-4">
+    <div class="row" id="contenedorAlimentos">
+        <div class="col-lg-4 col-12">
             <div class="card card text-center">
                 <div class="card-body">
                     <b>Lechuga</b> <a href="#" class="btn btn-primary" style="float: right;"><i class="fas fa-plus"></i></a>
@@ -41,142 +41,47 @@
                 </div>
             </div>
         </div>
-        <div class="col-1">
+        <div class="col-lg-4 col-12">
             <div class="card card text-center">
                 <div class="card-body">
-                    <p class="card-text">Tomate</p>
-                    <a href="#" class="btn btn-primary">+</a>
+                    <b>Lechuga</b> <a href="#" class="btn btn-primary" style="float: right;"><i class="fas fa-plus"></i></a>
+                    <p>(Vegetal)</p>
                 </div>
             </div>
         </div>
-        <div class="col-1">
+        <div class="col-lg-4 col-12">
             <div class="card card text-center">
                 <div class="card-body">
-                    <p class="card-text">Tomate</p>
-                    <a href="#" class="btn btn-primary">+</a>
+                    <b>Lechuga</b> <a href="#" class="btn btn-primary" style="float: right;"><i class="fas fa-plus"></i></a>
+                    <p>(Vegetal)</p>
                 </div>
             </div>
         </div>
-        <div class="col-1">
+        <div class="col-lg-4 col-12">
             <div class="card card text-center">
                 <div class="card-body">
-                    <p class="card-text">Tomate</p>
-                    <a href="#" class="btn btn-primary">+</a>
+                    <b>Lechuga</b> <a href="#" class="btn btn-primary" style="float: right;"><i class="fas fa-plus"></i></a>
+                    <p>(Vegetal)</p>
                 </div>
             </div>
         </div>
-        <div class="col-1">
+        <div class="col-lg-4 col-12">
             <div class="card card text-center">
                 <div class="card-body">
-                    <p class="card-text">Tomate</p>
-                    <a href="#" class="btn btn-primary">+</a>
+                    <b>Lechuga</b> <a href="#" class="btn btn-primary" style="float: right;"><i class="fas fa-plus"></i></a>
+                    <p>(Vegetal)</p>
                 </div>
             </div>
         </div>
-        <div class="col-1">
+        <div class="col-lg-4 col-12">
             <div class="card card text-center">
                 <div class="card-body">
-                    <p class="card-text">Tomate</p>
-                    <a href="#" class="btn btn-primary">+</a>
+                    <b>Lechuga</b> <a href="#" class="btn btn-primary" style="float: right;"><i class="fas fa-plus"></i></a>
+                    <p>(Vegetal)</p>
                 </div>
             </div>
         </div>
-        <div class="col-1">
-            <div class="card card text-center">
-                <div class="card-body">
-                    <p class="card-text">Tomate</p>
-                    <a href="#" class="btn btn-primary">+</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-1">
-            <div class="card card text-center">
-                <div class="card-body">
-                    <p class="card-text">Tomate</p>
-                    <a href="#" class="btn btn-primary">+</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-1">
-            <div class="card card text-center">
-                <div class="card-body">
-                    <p class="card-text">Tomate</p>
-                    <a href="#" class="btn btn-primary">+</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-1">
-            <div class="card card text-center">
-                <div class="card-body">
-                    <p class="card-text">Tomate</p>
-                    <a href="#" class="btn btn-primary">+</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-1">
-            <div class="card card text-center">
-                <div class="card-body">
-                    <p class="card-text">Tomate</p>
-                    <a href="#" class="btn btn-primary">+</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-1">
-            <div class="card card text-center">
-                <div class="card-body">
-                    <p class="card-text">Tomate</p>
-                    <a href="#" class="btn btn-primary">+</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-1">
-            <div class="card card text-center">
-                <div class="card-body">
-                    <p class="card-text">Tomate</p>
-                    <a href="#" class="btn btn-primary">+</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-1">
-            <div class="card card text-center">
-                <div class="card-body">
-                    <p class="card-text">Tomate</p>
-                    <a href="#" class="btn btn-primary">+</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-1">
-            <div class="card card text-center">
-                <div class="card-body">
-                    <p class="card-text">Tomate</p>
-                    <a href="#" class="btn btn-primary">+</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-1">
-            <div class="card card text-center">
-                <div class="card-body">
-                    <p class="card-text">Tomate</p>
-                    <a href="#" class="btn btn-primary">+</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-1">
-            <div class="card card text-center">
-                <div class="card-body">
-                    <p class="card-text">Tomate</p>
-                    <a href="#" class="btn btn-primary">+</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-1">
-            <div class="card card text-center">
-                <div class="card-body">
-                    <p class="card-text">Tomate</p>
-                    <a href="#" class="btn btn-primary">+</a>
-                </div>
-            </div>
-        </div>
+        
     </div>
 
 </section>
