@@ -40,7 +40,7 @@ class modeloTareas
 
     public function obtenerAlimentosDefecto()
     {
-        $this->db->query('SELECT id,nombre,tipo FROM alimento a');
+        $this->db->query('SELECT a.id,a.nombre,t.tipo FROM alimento a LEFT JOIN tipo_alimento t ON a.tipo=t.id');
 
         $resultado = $this->db->registros();
         return $resultado;
@@ -48,7 +48,22 @@ class modeloTareas
 
     public function obtenerAlimentosUsuario()
     {
-        $this->db->query('SELECT id,nombre,tipo FROM alimento_usuario au WHERE idUsuario='.$_SESSION['idUsuario']);
+        $this->db->query('SELECT au.id,au.nombre,t.tipo FROM alimento_usuario au LEFT JOIN tipo_alimento t ON au.tipo=t.id  WHERE idUsuario='.$_SESSION['idUsuario']);
+
+        $resultado = $this->db->registros();
+        return $resultado;
+    }
+
+    public function obtenerAlimentosDefectoFiltro($filtro)
+    {
+        $this->db->query('SELECT a.id,a.nombre,t.tipo FROM alimento a LEFT JOIN tipo_alimento t ON a.tipo=t.id WHERE nombre LIKE "'.$filtro.'%"');
+        $resultado = $this->db->registros();
+        return $resultado;
+    }
+
+    public function obtenerAlimentosUsuarioFiltro($filtro)
+    {
+        $this->db->query('SELECT au.id,au.nombre,t.tipo FROM alimento_usuario au LEFT JOIN tipo_alimento t ON au.tipo=t.id  WHERE idUsuario='.$_SESSION['idUsuario'].' AND nombre LIKE "'.$filtro.'%"');
 
         $resultado = $this->db->registros();
         return $resultado;

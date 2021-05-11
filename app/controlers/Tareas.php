@@ -50,8 +50,17 @@ class Tareas extends Controlador
             'Xdefecto' => $defecto,
             'Xusuario' =>  $usuario,
         ];
-        print_r($resultado);
-        die;
+        echo json_encode($resultado);
+    }
+
+
+    public function obtenerFiltroAlimentos(){
+        $defecto = $this->modeloTareas->obtenerAlimentosDefectoFiltro($_POST['filtro']);
+        $usuario = $this->modeloTareas->obtenerAlimentosUsuarioFiltro($_POST['filtro']);
+        $resultado = [
+            'Xdefecto' => $defecto,
+            'Xusuario' =>  $usuario,
+        ];
         echo json_encode($resultado);
     }
 }

@@ -2,7 +2,7 @@
     <div class="row mb-2">
         <div class="col-lg-8 col-12">
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Alimentos" aria-label="Alimentos">
+                <input type="text" class="form-control" placeholder="Alimentos" id="buscadorAlimentos" aria-label="Alimentos">
                 <div class="input-group-append">
                     <span class="input-group-text" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
                 </div>
@@ -33,54 +33,7 @@
         </div>
     </div>
     <div class="row" id="contenedorAlimentos">
-        <div class="col-lg-4 col-12">
-            <div class="card card text-center">
-                <div class="card-body">
-                    <b>Lechuga</b> <a href="#" class="btn btn-primary" style="float: right;"><i class="fas fa-plus"></i></a>
-                    <p>(Vegetal)</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 col-12">
-            <div class="card card text-center">
-                <div class="card-body">
-                    <b>Lechuga</b> <a href="#" class="btn btn-primary" style="float: right;"><i class="fas fa-plus"></i></a>
-                    <p>(Vegetal)</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 col-12">
-            <div class="card card text-center">
-                <div class="card-body">
-                    <b>Lechuga</b> <a href="#" class="btn btn-primary" style="float: right;"><i class="fas fa-plus"></i></a>
-                    <p>(Vegetal)</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 col-12">
-            <div class="card card text-center">
-                <div class="card-body">
-                    <b>Lechuga</b> <a href="#" class="btn btn-primary" style="float: right;"><i class="fas fa-plus"></i></a>
-                    <p>(Vegetal)</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 col-12">
-            <div class="card card text-center">
-                <div class="card-body">
-                    <b>Lechuga</b> <a href="#" class="btn btn-primary" style="float: right;"><i class="fas fa-plus"></i></a>
-                    <p>(Vegetal)</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 col-12">
-            <div class="card card text-center">
-                <div class="card-body">
-                    <b>Lechuga</b> <a href="#" class="btn btn-primary" style="float: right;"><i class="fas fa-plus"></i></a>
-                    <p>(Vegetal)</p>
-                </div>
-            </div>
-        </div>
+        
         
     </div>
 
