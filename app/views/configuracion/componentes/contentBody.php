@@ -16,7 +16,7 @@
             <?php include_once(RUTA_APP . '/views/configuracion/componentes/tablaZonas.php'); ?>
             <!-- /.FILTER col -->
             <!-- FILTER col -->
-            <?php include_once(RUTA_APP . '/views/configuracion/componentes/tablaTareas.php'); ?>
+            <?php include_once(RUTA_APP . '/views/configuracion/componentes/tablaAlimentos.php'); ?>
             <!-- /.FILTER col -->
         </div>
         <!-- /.row (main row) -->

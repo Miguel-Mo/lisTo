@@ -5,7 +5,7 @@
  *
  * @author Usuario
  */
-class modeloTareas
+class modeloAlimentos
 {
 
 

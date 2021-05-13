@@ -63,8 +63,8 @@ $.widget.bridge('uibutton', $.ui.button)
 <script src="<?php echo RUTA_URL; ?>/public/js/configuracion/configuracion.js"></script>
 
 <!-- jsAlimentos -->
-<script src="<?php echo RUTA_URL; ?>/public/js/tareas/addAlimentos.js"></script>
-<script src="<?php echo RUTA_URL; ?>/public/js/tareas/alimentos.js"></script>
+<script src="<?php echo RUTA_URL; ?>/public/js/alimentos/addAlimentos.js"></script>
+<script src="<?php echo RUTA_URL; ?>/public/js/alimentos/alimentos.js"></script>
 
 
 <!-- Select2 -->

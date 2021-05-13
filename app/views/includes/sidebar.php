@@ -79,10 +79,10 @@ if (!isset($_SESSION)) {
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?php echo RUTA_URL; ?>/Tareas" class="nav-link <?php echo (strpos($_SERVER['REQUEST_URI'], '/Tareas')) ? ' active' : ''; ?>">
+                    <a href="<?php echo RUTA_URL; ?>/Alimentos" class="nav-link <?php echo (strpos($_SERVER['REQUEST_URI'], '/Alimentos')) ? ' active' : ''; ?>">
                         <i class="nav-icon fas fa-th"></i>
                         <p>
-                            Tareas
+                            Alimentos
                             <!-- <span class="right badge badge-danger">50</span> -->
                         </p>
                     </a>

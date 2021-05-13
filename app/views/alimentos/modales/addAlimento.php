@@ -8,7 +8,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form class="form-signin" action="<?php echo RUTA_URL ?>/Tareas/addNuevoAlimento" method="POST" autocomplete="off">
+                <form class="form-signin" action="<?php echo RUTA_URL ?>/Alimentos/addNuevoAlimento" method="POST" autocomplete="off">
                     <div class="row">
                         <div class="col-12 mb-2">
                             <label for="inputEmail">Nombre del Alimento</label>

@@ -7,7 +7,7 @@ $(document).ready(function () {
         let url = $("#RUTA-URL").val();
         $.ajax({
             type: "POST",
-            url: url + "/Tareas/obtenerTiposAlimento",
+            url: url + "/Alimentos/obtenerTiposAlimento",
             dataType:"JSON",
             success: function (response) {
                 for (let index = 0; index < response['tipos'].length; index++) {

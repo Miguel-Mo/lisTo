@@ -4,7 +4,7 @@ $(document).ready(function () {
     let url = $("#RUTA-URL").val();
     $.ajax({
         type: "POST",
-        url: url + "/Tareas/obtenerTodosAlimentos",
+        url: url + "/Alimentos/obtenerTodosAlimentos",
         dataType: "JSON",
         success: function (response) {
             cardMaker(response);
@@ -33,7 +33,7 @@ $(document).ready(function () {
         let pescado = $("#pescado").val();
         $.ajax({
             type: "POST",
-            url: url + "/Tareas/obtenerFiltroAlimentos",
+            url: url + "/Alimentos/obtenerFiltroAlimentos",
             dataType: "JSON",
             data: { filtro: filtro, lacteo: lacteo, vegetal: vegetal, carne: carne, pescado: pescado },
             success: function (response) {
@@ -86,7 +86,7 @@ $(document).ready(function () {
 
                 $.ajax({
                     type: "POST",
-                    url: url + "/Tareas/eliminarAlimento",
+                    url: url + "/Alimentos/eliminarAlimento",
                     data: { id: id },
                     success: function (response) {
                         if (response == 1) {

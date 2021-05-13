@@ -5,15 +5,6 @@
         <div class="card-header">
             <h3 class="card-title">Tareas</h3>
             <div class="card-tools">
-                <!-- Button trigger modal -->
-                <!-- <button type="button" class="btn btn-tool btn-choco" data-toggle="modal" data-target="#nuevaTareaModal">
-                    <i class="far fa-calendar-plus"></i>
-                </button> -->
-                <!-- Button trigger modal -->
-                <!-- <button type="button" class="btn btn-tool btn-choco" data-toggle="modal"
-                    data-target="#editarTareaModal">
-                    <i class="far fa-calendar-minus"></i>
-                </button> -->
                 <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                     <i class="fas fa-minus"></i>
                 </button>

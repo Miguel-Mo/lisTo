@@ -8,7 +8,7 @@ class Configuracion extends Controlador
             session_start();
         }
         $this->modeloUsuarios = $this->modelo('modeloUsuarios');
-        $this->modeloTareas = $this->modelo('modeloTareas');
+        // $this->modeloAlimentos = $this->modelo('modeloAlimentos');
         $this->modeloCentros = $this->modelo('modeloCentros');
         $this->modeloEmpleados = $this->modelo('modeloEmpleados');
         $this->modeloZonas = $this->modelo('modeloZonas');
@@ -31,7 +31,6 @@ class Configuracion extends Controlador
 
         $datos = [
            'usuarios' => $this->modeloUsuarios->obtenerUsuarios(),
-           'tareas' => $this->modeloTareas->obtenerTareas(),
            'centros' => $this->modeloCentros->obtenerCentros(),
            'empleados' => $this->modeloEmpleados->obtenerEmpleados(),
            'zonas' => $this->modeloZonas->obtenerZonas(),

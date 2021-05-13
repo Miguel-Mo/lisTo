@@ -1,13 +1,13 @@
 <?php
 
-class Tareas extends Controlador
+class Alimentos extends Controlador
 {
     public function __construct()
     {
         if (!isset($_SESSION)) {
             session_start();
         }
-        $this->modeloTareas = $this->modelo('modeloTareas');
+        $this->modeloAlimentos = $this->modelo('modeloAlimentos');
         $this->modeloBBDD = $this->modelo('modeloBBDD');
     }
 
@@ -18,15 +18,15 @@ class Tareas extends Controlador
         }
 
         $datos = [
-            //    'alimentos' => $this->modeloTareas->obtenerAlimentos(),
+            //    'alimentos' => $this->modeloAlimentos->obtenerAlimentos(),
         ];
-        $this->vista('tareas/tareas', $datos);
+        $this->vista('alimentos/alimentos', $datos);
     }
 
     public function obtenerTiposAlimento()
     {
-        $tipos = $this->modeloTareas->obtenerTiposAlimento();
-        $unidades = $this->modeloTareas->obtenerUnidadesAlimento();
+        $tipos = $this->modeloAlimentos->obtenerTiposAlimento();
+        $unidades = $this->modeloAlimentos->obtenerUnidadesAlimento();
         $resultado = [
             'tipos' => $tipos,
             'unidades' =>  $unidades,
@@ -37,15 +37,15 @@ class Tareas extends Controlador
 
     public function addNuevoAlimento()
     {
-        $this->modeloTareas->insertNuevoAlimento($_POST);
+        $this->modeloAlimentos->insertNuevoAlimento($_POST);
 
-        redireccionar('/Tareas');
+        redireccionar('/Alimentos');
     }
 
     public function obtenerTodosAlimentos()
     {
-        $defecto = $this->modeloTareas->obtenerAlimentosDefecto();
-        $usuario = $this->modeloTareas->obtenerAlimentosUsuario();
+        $defecto = $this->modeloAlimentos->obtenerAlimentosDefecto();
+        $usuario = $this->modeloAlimentos->obtenerAlimentosUsuario();
         $resultado = [
             'Xdefecto' => $defecto,
             'Xusuario' =>  $usuario,
@@ -55,8 +55,8 @@ class Tareas extends Controlador
 
 
     public function obtenerFiltroAlimentos(){
-        $defecto = $this->modeloTareas->obtenerAlimentosDefectoFiltro($_POST);
-        $usuario = $this->modeloTareas->obtenerAlimentosUsuarioFiltro($_POST);
+        $defecto = $this->modeloAlimentos->obtenerAlimentosDefectoFiltro($_POST);
+        $usuario = $this->modeloAlimentos->obtenerAlimentosUsuarioFiltro($_POST);
         $resultado = [
             'Xdefecto' => $defecto,
             'Xusuario' =>  $usuario,
@@ -64,7 +64,7 @@ class Tareas extends Controlador
         echo json_encode($resultado);
     }
     public function eliminarAlimento(){
-        $resultado=$this->modeloTareas->eliminarAlimentoById($_POST['id']);
+        $resultado=$this->modeloAlimentos->eliminarAlimentoById($_POST['id']);
         echo $resultado;
     }
 }
