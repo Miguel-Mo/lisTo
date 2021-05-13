@@ -12,22 +12,30 @@ $(document).ready(function () {
     });
 
     $("#buscadorAlimentos").keyup(function () {
+        filtrar();
+    });
+
+    $(document).on('click', '.filtradoTipos', function (event) {
+        filtrar();
+    });
+
+    function filtrar() {
         let filtro = $("#buscadorAlimentos").val();
-        let lacteo=$("#lacteo").val();
-        let vegetal=$("#vegetal").val();
-        let carne=$("#carne").val();
-        let pescado=$("#pescado").val();
+        let lacteo = $("#lacteo").val();
+        let vegetal = $("#vegetal").val();
+        let carne = $("#carne").val();
+        let pescado = $("#pescado").val();
         $.ajax({
             type: "POST",
             url: url + "/Tareas/obtenerFiltroAlimentos",
             dataType: "JSON",
-            data: { filtro: filtro ,lacteo:lacteo,vegetal:vegetal,carne:carne,pescado:pescado},
+            data: { filtro: filtro, lacteo: lacteo, vegetal: vegetal, carne: carne, pescado: pescado },
             success: function (response) {
                 $("#contenedorAlimentos").empty()
                 cardMaker(response);
             }
         });
-    });
+    }
 
     function cardMaker(response) {
         if (response['Xdefecto'].length > 0) {

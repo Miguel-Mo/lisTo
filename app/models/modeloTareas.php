@@ -71,7 +71,7 @@ class modeloTareas
     }
 
     public function formatedFiltro($datosFiltro)
-    {
+    { 
         $filtrosActivos = [];
         $datosFiltro['lacteo'] == 1 ? array_push($filtrosActivos, 1) : "";
         $datosFiltro['vegetal'] == 1 ? array_push($filtrosActivos, 2) : "";
@@ -85,7 +85,7 @@ class modeloTareas
                 $tipos .= $filtrosActivos[$i] . ",";
             }
         }
-        $filtrito = $tipos != "" ? 'AND a.tipo IN("' . $tipos . '")' : "";
+        $filtrito = $tipos != "" ? 'AND a.tipo IN(' . $tipos . ')' : "";
         return $filtrito;
     }
 }
