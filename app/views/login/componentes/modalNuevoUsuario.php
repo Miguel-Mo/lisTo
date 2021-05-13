@@ -8,13 +8,13 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form class="form-signin" action="<?php echo RUTA_URL ?>/Login/acceder" method="POST" autocomplete="off">
+                <form class="form-signin" method="POST" autocomplete="off">
                     <br>
                     <label for="inputEmail" class="sr-only">Nombre</label>
                     <input type="text" id="inputNombreNuevo" name="nombreNuevo" class="form-control" placeholder="Nombre" required >
                     <br>
                     <label for="inputEmail" class="sr-only">Ciudad</label>
-                    <input type="text" id="ship-address" name="ship-address" class="form-control" autocomplete="off" placeholder="Ciudad" required  >
+                    <input type="text" id="ship-address" name="direccionNuevo" class="form-control" autocomplete="off" placeholder="Ciudad" required  >
                     <br>
                     <label for=" inputEmail" class="sr-only">Email</label>
                     <input type="email" id="inputEmailNuevo" name="mailNuevo" class="form-control" placeholder="Email" required >
@@ -22,15 +22,32 @@
                     <label for="inputPassword" class="sr-only">Password</label>
                     <input type="password" id="inputPasswordNuevo" name="passNuevo" class="form-control" placeholder="Password" required>
                     <br>
-                    <button class="btn btn-lg btn-warning btn-block" type="submit">Entrar</button>
+                    <!-- <button class="btn btn-lg btn-warning btn-block" type="submit">Entrar</button> -->
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-primary" id="registroUsuario">Save changes</button>
             </div>
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB78SmW7P0bh8pZBOdz-n_cF_mxl59cVzM&callback=initAutocomplete&libraries=places&v=weekly" async></script>
-            <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
         </div>
     </div>
 </div>
+
+<script>
+$(document).ready(function () {
+    $(document).on('click', '#registroUsuario', function (event) {
+        alert("hola");
+        let form=$("#form-signin").serialize();
+        let url = $("#RUTA-URL").val();
+        $.ajax({
+            type: "POST",
+            url: url + "/registroNuevoUsuario",
+            data: {form:form},
+            success: function (response) {
+                
+            }
+        });
+
+    });
+});
+</script>

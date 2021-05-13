@@ -53,7 +53,6 @@
     <!-- AdminLTE App -->
     <script src="public/vendor/almasaeed2010/adminlte/dist/js/adminlte.min.js"></script>
     <?php require_once(RUTA_APP . '/views/login/componentes/modalNuevoUsuario.php'); ?>
-    <script src="public/js/login/autoPlaces.js"></script>
 
     
 

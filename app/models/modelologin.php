@@ -8,17 +8,9 @@ class modeloLogin {
         $this->db = new Base;
     }
 
-    public function obtenerUsuariosRol($idRol){
-        $this->db->query('SELECT r.*,nombreUsuario,emailUsuario,idUsuario FROM usuarios
-        LEFT JOIN roles r on r.idRol=usuarios.idRolUsuario where r.idRol='.$idRol);
-
-        $resultado = $this->db->registros();
-
-        return $resultado;
-    }
 
     public function comprobarLogin($mail, $pass) {
-        /*
+        
         $this->db->query('SELECT * FROM usuarios WHERE mail = :mail AND password = :pass');
         $this->db->bind(':mail', $mail);
         $this->db->bind(':pass', $pass);
@@ -26,12 +18,9 @@ class modeloLogin {
         $fila = $this->db->registro();
 
         return $fila;
-        */
-//          Ahora trabajamos con un array, en producción lo haremos con una tabla de la base de datos
-        $usuarios = ["test@data.es", "test", "Test"];
 
-        if (in_array($mail, $usuarios) && in_array($pass, $usuarios)) {
-            return $usuarios[2];
+        if (in_array($mail, $fila) && in_array($pass, $fila)) {
+            return $fila[2];
         } else {
             return 0;
         }
