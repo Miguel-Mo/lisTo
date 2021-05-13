@@ -44,4 +44,13 @@ class modeloLogin {
         return $fila;
     }
 
+    public function registroNuevoUsuario($nuevoRegistro){
+        $sql='INSERT INTO usuarios (nombreUsuario, emailUsuario, password,ciudad,idRolUsuario)
+        VALUES ("' . $nuevoRegistro["nombreNuevo"] . '", ' . $nuevoRegistro["mailNuevo"] . ', ' . $nuevoRegistro["passNuevo"] . ',' . $nuevoRegistro['direccionNuevo'] . ',1)';
+        $this->db->query('INSERT INTO usuarios (nombreUsuario, emailUsuario, password,ciudad,idRolUsuario)
+        VALUES ("' . $nuevoRegistro["nombreNuevo"] . '", "' . $nuevoRegistro["mailNuevo"] . '", "' . $nuevoRegistro["passNuevo"] . '","' . $nuevoRegistro['direccionNuevo'] . '",1)');
+        $resultado=$this->db->execute()==true?1:0;
+        return $resultado;
+    }
+
 }

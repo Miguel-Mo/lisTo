@@ -15,7 +15,7 @@ class Login extends Controlador
         }
         // Si la sesion esta iniciada que vuelva al inicio correspondiente
         if (isset($_SESSION['token_control']) && !empty($_SESSION['token_control']) && $_SESSION['token_control'] == 1) {
-                redireccionar('/Inicio');
+            redireccionar('/Inicio');
             die;
         }
 
@@ -62,8 +62,9 @@ class Login extends Controlador
 
     public function registroNuevoUsuario()
     {
-        print_r($_POST);
-        die;
+        parse_str($_POST['form'], $nuevoRegistro);
+        $resultado = $this->modeloLogin->registroNuevoUsuario($nuevoRegistro);
+        echo $resultado;
     }
 
 
@@ -74,7 +75,7 @@ class Login extends Controlador
         session_unset();
         session_destroy();
         if (headers_sent()) {
-            return '<script>window.location.href='.RUTA_URL.'</script>';
+            return '<script>window.location.href=' . RUTA_URL . '</script>';
         } else {
             redireccionar('/Login');
         }
