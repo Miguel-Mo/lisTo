@@ -88,4 +88,11 @@ class modeloTareas
         $filtrito = $tipos != "" ? 'AND a.tipo IN(' . $tipos . ')' : "";
         return $filtrito;
     }
+
+    public function eliminarAlimentoById($id){
+
+        $this->db->query('DELETE FROM alimento_usuario WHERE id='.$id);
+        $resultado = $this->db->execute()==true?1:0;
+        return $resultado;
+    }
 }

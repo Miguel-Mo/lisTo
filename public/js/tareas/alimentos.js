@@ -19,6 +19,12 @@ $(document).ready(function () {
         filtrar();
     });
 
+    $(document).on('click', '.eliminarAlimento', function (event) {
+        event.preventDefault();
+        let id = $(this).attr("value");
+        eliminarAlimento(id);
+    });
+
     function filtrar() {
         let filtro = $("#buscadorAlimentos").val();
         let lacteo = $("#lacteo").val();
@@ -57,7 +63,7 @@ $(document).ready(function () {
                     '<div class="card card text-center">' +
                     '<div class="card-body">' +
                     '<b>' + response['Xusuario'][index]['nombre'] + '</b>' +
-                    '<a href="#" class="btn btn-danger" id="dAlimento' + response['Xusuario'][index]['id'] + '" style="float: right;"><i class="fas fa-trash"></i></a>' +
+                    '<a href="#" class="btn btn-danger eliminarAlimento" value=' + response['Xusuario'][index]['id'] + ' id="dAlimento' + response['Xusuario'][index]['id'] + '" style="float: right;" ><i class="fas fa-trash"></i></a>' +
                     '<p>(' + response['Xusuario'][index]['tipo'] + ')</p>' +
                     '</div>' +
                     '</div>' +
@@ -66,7 +72,38 @@ $(document).ready(function () {
 
             }
         }
+    }
 
+    function eliminarAlimento(id) {
+        Swal.fire({
+            title: '¿Seguro que quieres eliminar este alimento?',
+            showCancelButton: true,
+            confirmButtonText: `Si`,
+        }).then((result) => {
+
+
+            if (result['value'] == true) {
+
+                $.ajax({
+                    type: "POST",
+                    url: url + "/Tareas/eliminarAlimento",
+                    data: { id: id },
+                    success: function (response) {
+                        if (response == 1) {
+                            Swal.fire('Saved!', '', 'success').then((result) => {
+                                result['value'] == true ? location.reload() : "";
+                            })
+                        }
+                        else {
+                            Swal.fire('Error!', '', 'info')
+                        }
+                    }
+                });
+            } else {
+                Swal.fire('El alimento no ha sido eliminado', '', 'info')
+            }
+        })
 
     }
+
 })

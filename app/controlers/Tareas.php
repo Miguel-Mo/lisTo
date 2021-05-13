@@ -63,4 +63,8 @@ class Tareas extends Controlador
         ];
         echo json_encode($resultado);
     }
+    public function eliminarAlimento(){
+        $resultado=$this->modeloTareas->eliminarAlimentoById($_POST['id']);
+        echo $resultado;
+    }
 }
