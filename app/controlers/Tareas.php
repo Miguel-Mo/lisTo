@@ -55,8 +55,8 @@ class Tareas extends Controlador
 
 
     public function obtenerFiltroAlimentos(){
-        $defecto = $this->modeloTareas->obtenerAlimentosDefectoFiltro($_POST['filtro']);
-        $usuario = $this->modeloTareas->obtenerAlimentosUsuarioFiltro($_POST['filtro']);
+        $defecto = $this->modeloTareas->obtenerAlimentosDefectoFiltro($_POST);
+        $usuario = $this->modeloTareas->obtenerAlimentosUsuarioFiltro($_POST);
         $resultado = [
             'Xdefecto' => $defecto,
             'Xusuario' =>  $usuario,

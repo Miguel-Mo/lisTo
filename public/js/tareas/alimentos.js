@@ -13,11 +13,15 @@ $(document).ready(function () {
 
     $("#buscadorAlimentos").keyup(function () {
         let filtro = $("#buscadorAlimentos").val();
+        let lacteo=$("#lacteo").val();
+        let vegetal=$("#vegetal").val();
+        let carne=$("#carne").val();
+        let pescado=$("#pescado").val();
         $.ajax({
             type: "POST",
             url: url + "/Tareas/obtenerFiltroAlimentos",
             dataType: "JSON",
-            data: { filtro: filtro },
+            data: { filtro: filtro ,lacteo:lacteo,vegetal:vegetal,carne:carne,pescado:pescado},
             success: function (response) {
                 $("#contenedorAlimentos").empty()
                 cardMaker(response);
@@ -57,11 +61,4 @@ $(document).ready(function () {
 
 
     }
-
-
-    function myFunction() {
-        console.log("hola");
-    }
-
-
 })
