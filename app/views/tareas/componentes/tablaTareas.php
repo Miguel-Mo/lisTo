@@ -12,16 +12,16 @@
         <div class="col-lg-2 col-6 mt-1 mb-1">
             <div class="btn-group btn-group-toggle flex-wrap btn-block" data-toggle="buttons">
                 <label class="btn btn-primary">
-                    <input type="checkbox" name="countries[]" value="España" autocomplete="off"> <i class="fas fa-cheese"></i>
+                    <input type="checkbox" name="countries[]" value="1" autocomplete="off" onclick="filtrarTipo()"> <i class="fas fa-cheese"></i>
                 </label>
                 <label class="btn btn-primary">
-                    <input type="checkbox" name="countries[]" value="Francia" autocomplete="off"> <i class="fas fa-carrot"></i>
+                    <input type="checkbox" name="countries[]" value="2" autocomplete="off" onclick="filtrarTipo()"> <i class="fas fa-carrot"></i>
                 </label>
                 <label class="btn btn-primary">
-                    <input type="checkbox" name="countries[]" value="Portugal" autocomplete="off"> <i class="fas fa-drumstick-bite"></i>
+                    <input type="checkbox" name="countries[]" value="3" autocomplete="off" onclick="filtrarTipo()"> <i class="fas fa-drumstick-bite"></i>
                 </label>
                 <label class="btn btn-primary">
-                    <input type="checkbox" name="countries[]" value="Italia" autocomplete="off"> <i class="fas fa-fish"></i>
+                    <input type="checkbox" name="countries[]" value="4" autocomplete="off" onclick="filtrarTipo()"> <i class="fas fa-fish"></i>
                 </label>
             </div>
 
