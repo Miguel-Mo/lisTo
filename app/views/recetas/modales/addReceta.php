@@ -18,7 +18,7 @@
 
                         <div class="col-12 mb-2">
                             <label for="dificultad">Dificultad</label>
-                            <select class="custom-select" required>
+                            <select name="dificultad" class="custom-select" required>
                                 <option value="">Elige la dificultad</option>
                                 <option value="1">Fácil</option>
                                 <option value="2">Normal</option>
@@ -28,7 +28,7 @@
 
                         <div class="col-12 mb-2">
                             <label for="tiempoReceta">Tiempo aproximado</label>
-                            <select class="custom-select" required>
+                            <select name="tiempoReceta" class="custom-select" required>
                                 <option value="">Elige el tiempo aproximado</option>
                                 <option value="1">15 minutos</option>
                                 <option value="2">30 minutos</option>
@@ -43,15 +43,15 @@
                         que añadimos uno nuevo y cargar los alimentos tambien falta buscador en esta vista-->
 
                         <div class="col-6 mt-2">
-                            <select class="selectIngrediente" name="ingredienteReceta" id="ingredienteReceta1" required>
+                            <select class="selectIngrediente" name="ingredienteReceta[]" id="ingredienteReceta1" required>
                                 <option></option>
                             </select>
                         </div>
                         <div class="col-3 mt-2">
-                            <input type="text" name="cantidadReceta" id="cantidadReceta1" placeholder="Cantidad" class="form-control" required>
+                            <input type="text" name="cantidadReceta[]" id="cantidadReceta1" placeholder="Cantidad" class="form-control" required>
                         </div>
                         <div class="col-3 mt-2">
-                            <select class="selectUnidad" name="unidadMedidaReceta" id="unidadMedidaReceta1" required>
+                            <select class="selectUnidad" name="unidadMedidaReceta[]" id="unidadMedidaReceta1" required>
                                 <option></option>
                             </select>
                         </div>
@@ -59,6 +59,7 @@
 
                         <div id="containerIngredientes" class="row">
                         </div>
+                        
                         <div class="col-12 mt-2">
                             <div class="row text-center">
 
@@ -66,24 +67,21 @@
                                     <a class="btn"><i class="fas fa-plus-square fa-3x"></i></a>
                                 </div>
                                 <div class="col-6" id="deleteIngrediente">
-                                    <a class="btn"><i class="fas fa-minus-square fa-3x"></i>
+                                    <a class="btn"><i class="fas fa-minus-square fa-3x"></i></a>
                                 </div>
 
                             </div>
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-lg btn-warning btn-block" type="submit">Añadir</button>
                         </div>
 
 
                     </div>
 
 
-
-
-                    <div class="col-12">
-                        <button class="btn btn-lg btn-warning btn-block" type="submit">Añadir</button>
-                    </div>
+                </form>
             </div>
-            </form>
         </div>
     </div>
-</div>
 </div>

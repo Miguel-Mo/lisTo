@@ -60,15 +60,15 @@ $(document).ready(function () {
 
         contador++;
         let html = '<div class="col-6 mt-2 ingrediente' + contador + '">' +
-            '<select class="selectIngrediente " style="width: 100%;" name="ingredienteReceta" id="ingredienteReceta' + contador + '" required>' +
+            '<select class="selectIngrediente " style="width: 100%;" name="ingredienteReceta[]" id="ingredienteReceta' + contador + '" required>' +
             '<option></option>' +
             '</select>' +
             '</div>' +
             '<div class="col-3 mt-2 ingrediente' + contador + '">' +
-            '<input type="text" name="cantidadReceta"  id="cantidadReceta' + contador + '" placeholder="Cantidad" class="form-control" required>' +
+            '<input type="text" name="cantidadReceta[]"  id="cantidadReceta' + contador + '" placeholder="Cantidad" class="form-control" required>' +
             '</div>' +
             '<div class="col-3 mt-2 ingrediente' + contador + '">' +
-            '<select class="selectUnidad" style="width: 100% name="unidadMedidaReceta" id="unidadMedidaReceta' + contador + '" required>' +
+            '<select class="selectUnidad" style="width: 100%" name="unidadMedidaReceta[]" id="unidadMedidaReceta' + contador + '" required>' +
             '<option></option>' +
             '</select>' +
             '</div>';

@@ -24,5 +24,15 @@ class Recetas extends Controlador
         $this->vista('recetas/recetas', $datos);
     }
 
+
+
+    public function addNuevoReceta(){
+        $idReceta=$this->modeloRecetas->insertNuevaReceta($_POST);
+        
+        for ($i=0; $i < count($_POST['ingredienteReceta']); $i++) { 
+            $this->modeloRecetas->insertAlimentoReceta($_POST['ingredienteReceta'][$i],$_POST['cantidadReceta'][$i],$_POST['unidadMedidaReceta'][$i],$idReceta);
+        }
+        redireccionar('/Recetas');
+    }
  
 }
