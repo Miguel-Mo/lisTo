@@ -66,6 +66,9 @@ $.widget.bridge('uibutton', $.ui.button)
 <script src="<?php echo RUTA_URL; ?>/public/js/alimentos/addAlimentos.js"></script>
 <script src="<?php echo RUTA_URL; ?>/public/js/alimentos/alimentos.js"></script>
 
+<!-- jsRecetas -->
+<script src="<?php echo RUTA_URL; ?>/public/js/recetas/addRecetas.js"></script>
+
 
 <!-- Select2 -->
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>

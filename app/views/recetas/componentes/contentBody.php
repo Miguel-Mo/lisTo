@@ -1,12 +1,11 @@
 <!-- Main content -->
 <section class="content">
     <div class="container-fluid">
-        
-        <!-- Main row -->
-        <div class="row row-cols-1 row-cols-md-3">
-            <!-- Empresas col -->
-            
-            <!-- /.FILTER col -->
+
+        <div class="row">
+            <?php include_once(RUTA_APP . '/views/recetas/componentes/tablaRecetas.php'); ?>
+            <?php require_once(RUTA_APP . '/views/recetas/modales/addReceta.php') ?>
+
         </div>
         <!-- /.row (main row) -->
     </div><!-- /.container-fluid -->

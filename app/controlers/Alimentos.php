@@ -67,4 +67,18 @@ class Alimentos extends Controlador
         $resultado=$this->modeloAlimentos->eliminarAlimentoById($_POST['id']);
         echo $resultado;
     }
+
+    public function obtenerTiposyAlimentosRecetas()
+    {
+        $defecto = $this->modeloAlimentos->obtenerAlimentosDefecto();
+        $usuario = $this->modeloAlimentos->obtenerAlimentosUsuario();
+        $unidades = $this->modeloAlimentos->obtenerUnidadesAlimento();
+        $resultado = [
+            'defecto' => $defecto,
+            'usuario' => $usuario,
+            'unidades' =>  $unidades,
+        ];
+
+        echo json_encode($resultado);
+    }
 }
