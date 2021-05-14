@@ -32,19 +32,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach($datos['centros'] as $centro){ ?>
-                    <tr data-id="<?php echo $centro->idCentro; ?>" data-modal="editarCentroModal">
-                        <td class="row-link">
-                            <?php echo $centro->nombreCentro; ?>
-                        </td>
-                        <td>
-                            <?php echo $centro->emailAdministracionCentro; ?>
-                        </td>
-                        <td>
-                            <?php echo $centro->telefonoCentro; ?>
-                        </td>
-                    </tr>
-                    <?php } ?>
+                    
                 </tbody>
             </table>
         </div>

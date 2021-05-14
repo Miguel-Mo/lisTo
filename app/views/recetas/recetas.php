@@ -4,12 +4,12 @@
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
-        <?php include_once(RUTA_APP . '/views/centros/componentes/contentHeader.php'); ?>
+        <?php include_once(RUTA_APP . '/views/recetas/componentes/contentHeader.php'); ?>
     </div>
     <!-- /.content-header -->
 
     <!-- Main content -->
-    <?php include_once(RUTA_APP . '/views/centros/componentes/contentBody.php'); ?>
+    <?php include_once(RUTA_APP . '/views/recetas/componentes/contentBody.php'); ?>
     <!-- /.content -->
 </div>
 <?php require(RUTA_APP . '/views/includes/footer.php'); ?>

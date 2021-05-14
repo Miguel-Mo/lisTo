@@ -7,7 +7,7 @@
             <?php include_once(RUTA_APP . '/views/configuracion/componentes/tablaUsuarios.php'); ?>
             <!-- /.FILTER col -->
             <!-- FILTER col -->
-            <?php include_once(RUTA_APP . '/views/configuracion/componentes/tablaCentros.php'); ?>
+            <?php include_once(RUTA_APP . '/views/configuracion/componentes/tablaRecetas.php'); ?>
             <!-- /.FILTER col -->
             <!-- FILTER col -->
             <?php include_once(RUTA_APP . '/views/configuracion/componentes/tablaEmpleados.php'); ?>

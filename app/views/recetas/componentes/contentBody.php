@@ -5,7 +5,7 @@
         <!-- Main row -->
         <div class="row row-cols-1 row-cols-md-3">
             <!-- Empresas col -->
-            <?php include_once(RUTA_APP . '/views/centros/componentes/cartaCentro.php'); ?>
+            
             <!-- /.FILTER col -->
         </div>
         <!-- /.row (main row) -->

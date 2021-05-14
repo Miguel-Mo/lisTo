@@ -50,11 +50,7 @@
                     <div class="form-group">
                         <label for="idCentroPersona">Centro</label>
                         <select id="idCentroPersona" name="idCentroPersona" class="form-control form-control-sm">
-                            <?php foreach($datos['centros'] as $centro){ ?>
-                            <option value="<?php echo $centro->idCentro; ?>">
-                                <?php echo $centro->nombreCentro; ?>
-                            </option>
-                            <?php } ?>
+                            
                         </select>
                     </div>
                 </form>

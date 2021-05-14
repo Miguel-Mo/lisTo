@@ -103,20 +103,10 @@ $(document).ready(() => {
         "./Usuarios/editarUsuario", "./Usuarios/borrarUsuario", "#botonBorrarUsuario", "#formEditarUsuarioId", "Borrar usuario",
         "¿Estás seguro de que quieres borrar este usuario?")
 
-    // Centros
-    megaCrudHandlerCrusher("#formNuevoCentro", "#formEditarCentro", "./Centros/nuevoCentro",
-        "./Centros/editarCentro", "./Centros/borrarCentro", "#botonBorrarCentro", "#formEditarCentroId", "Borrar Centro",
-        "¿Estás seguro de que quieres borrar este centro?")
-
     // Empleados
     megaCrudHandlerCrusher("#formNuevoEmpleado", "#formEditarEmpleado", "./Empleados/nuevoEmpleado",
         "./Empleados/editarEmpleado", "./Empleados/borrarEmpleado", "#botonBorrarEmpleado", "#formEditarEmpleadoId", "Borrar Empleado",
         "¿Estás seguro de que quieres borrar este empleado?")
-
-    // Tareas
-    megaCrudHandlerCrusher("#formNuevaTarea", "#formEditarTarea", "./Tareas/nuevaTarea",
-        "./Tareas/editarTarea", "./Tareas/borrarTarea", "#botonBorrarTarea", "#formEditarTareaId", "Borrar Tarea",
-        "¿Estás seguro de que quieres borrar esta tarea?")
 
     // Zonas
     megaCrudHandlerCrusher("#formNuevaZona", "#formEditarZona", "./Zonas/nuevaZona",

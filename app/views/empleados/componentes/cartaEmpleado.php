@@ -32,11 +32,6 @@
                         Total Completadas <span class="float-right badge bg-kiki"><?php echo $empleado->TareasTerminadasTotal; ?></span>
                     </a>
                 </li>
-                <li class="nav-item bg-secondary">
-                    <a href="<?php echo RUTA_URL; ?>/Centros" class="nav-link text-choco">
-                        CENTRO: <span class="float-right text-kiki"><?php echo $empleado->nombreCentro; ?></span></a>
-                    
-                </li>
             </ul>
         </div>
     </div>

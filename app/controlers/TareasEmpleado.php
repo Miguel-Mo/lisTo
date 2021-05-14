@@ -23,14 +23,9 @@ class TareasEmpleado extends Controlador
         // ya sea un empleado o lo que sea siempre va redirigir a la pagina de centros si no es un admin
 
         if (empty($idPersona)) {
-            if ($_SESSION['rol'] != 1) {
-                $centro = $_SESSION['centro'];
-
-                // redirecciono a la lista de empleados del centro
-                redireccionar('/Empleados/EmpleadosCentro/'.$centro->idCentro);
-            } else {
+           
                 redireccionar('/Inicio');
-            }
+           
             die;
         } else {
             // buscar la persona a ver si pertenece al centro logueado
@@ -61,8 +56,6 @@ class TareasEmpleado extends Controlador
                 if ($_SESSION['rol'] != 1) {
                     $centro = $_SESSION['centro'];
 
-                    // redirecciono a la lista de empleados del centro
-                    redireccionar('/Empleados/EmpleadosCentro/'.$centro->idCentro);
                 } else {
                     redireccionar('/Inicio');
                 }
@@ -83,7 +76,6 @@ class TareasEmpleado extends Controlador
                 $centro = $_SESSION['centro'];
 
                 // redirecciono a la lista de empleados del centro
-                redireccionar('/Empleados/EmpleadosCentro/'.$centro->idCentro);
             } else {
                 redireccionar('/Inicio');
             }

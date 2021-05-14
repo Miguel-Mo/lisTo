@@ -45,8 +45,6 @@ function rowlinkModal(idTable) {
 
             if (idTable === "usuarios-table") {
                 cargarForm("./Usuarios/obtenerUsuario", idElemento, idModal, "formEditarUsuario");
-            } else if (idTable === "centros-table") {
-                cargarForm("./Centros/obtenerCentro", idElemento, idModal, "formEditarCentro");
             } else if (idTable === "empleados-table") {
                 cargarForm("./Empleados/obtenerEmpleado", idElemento, idModal, "formEditarEmpleado");
             } else if (idTable === "tareas-table") {
@@ -64,7 +62,6 @@ function rowlinkModal(idTable) {
 
 jQuery(document).ready(function($) {
     rowlinkModal("usuarios-table");
-    rowlinkModal("centros-table");
     rowlinkModal("empleados-table");
     rowlinkModal("tareas-table");
     rowlinkModal("zonas-table");

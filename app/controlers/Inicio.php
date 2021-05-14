@@ -15,12 +15,12 @@ class Inicio extends Controlador
         if (!isset($_SESSION)) {
             session_start();
         }
-        // ya sea un empleado o lo que sea siempre va redirigir a la pagina de centros si no es un admin
         if ($_SESSION['rol'] != 1) {
-            $centro = $_SESSION['centro'];
+            // $centro = $_SESSION['centro'];
 
             // redirecciono a la lista de empleados del centro
-            redireccionar('/Empleados/EmpleadosCentro/'.$centro->idCentro);
+            // redireccionar('/Empleados/EmpleadosCentro/'.$centro->idCentro);
+            $this->vista('inicio/inicio', "");
             die;
         }
         ////$clientes = $this->clienteModelo->clientes();

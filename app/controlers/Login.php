@@ -5,7 +5,7 @@ class Login extends Controlador
     public function __construct()
     {
         $this->modeloLogin = $this->modelo('modeloLogin');
-        $this->modeloCentros = $this->modelo('modeloCentros');
+        $this->modeloRecetas = $this->modelo('modeloRecetas');
     }
 
     public function index()
