@@ -34,5 +34,10 @@ class Recetas extends Controlador
         }
         redireccionar('/Recetas');
     }
+
+    public function obtenerTodasRecetas(){
+        $resultado = $this->modeloRecetas->obtenerTodasRecetas();
+        echo json_encode($resultado);
+    }
  
 }

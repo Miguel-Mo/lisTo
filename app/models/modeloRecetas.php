@@ -25,5 +25,11 @@ class modeloRecetas
         VALUES (' . $ingredienteReceta . ', ' . $cantidadReceta . ', ' . $unidadMedidaReceta . ',' . $idReceta . ')');
         $this->db->execute();
     }
+
+    public function obtenerTodasRecetas(){
+        $this->db->query('SELECT * FROM receta r  WHERE idUsuario=' . $_SESSION['idUsuario']);
+        $resultado = $this->db->registros();
+        return $resultado;
+    }
    
 }

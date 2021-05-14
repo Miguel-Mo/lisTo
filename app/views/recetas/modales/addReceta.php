@@ -39,8 +39,7 @@
                             </select>
                         </div>
 
-                        <!--proximo dia insertar alimentos tambien borrar en el select los ingredientes cada vez
-                        que añadimos uno nuevo y cargar los alimentos tambien falta buscador en esta vista-->
+                        <!--cargar los alimentos tambien falta buscador en esta vista-->
 
                         <div class="col-6 mt-2">
                             <select class="selectIngrediente" name="ingredienteReceta[]" id="ingredienteReceta1" required>
