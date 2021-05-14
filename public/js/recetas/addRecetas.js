@@ -59,15 +59,15 @@ $(document).ready(function () {
     $(document).on('click', '#addIngrediente', function (event) {
 
         contador++;
-        let html = '<div class="col-6 mt-2">' +
-            '<select class="selectIngrediente" style="width: 100%;" name="ingredienteReceta" id="ingredienteReceta' + contador + '" required>' +
+        let html = '<div class="col-6 mt-2 ingrediente' + contador + '">' +
+            '<select class="selectIngrediente " style="width: 100%;" name="ingredienteReceta" id="ingredienteReceta' + contador + '" required>' +
             '<option></option>' +
             '</select>' +
             '</div>' +
-            '<div class="col-3 mt-2">' +
+            '<div class="col-3 mt-2 ingrediente' + contador + '">' +
             '<input type="text" name="cantidadReceta"  id="cantidadReceta' + contador + '" placeholder="Cantidad" class="form-control" required>' +
             '</div>' +
-            '<div class="col-3 mt-2">' +
+            '<div class="col-3 mt-2 ingrediente' + contador + '">' +
             '<select class="selectUnidad" style="width: 100% name="unidadMedidaReceta" id="unidadMedidaReceta' + contador + '" required>' +
             '<option></option>' +
             '</select>' +
@@ -84,6 +84,13 @@ $(document).ready(function () {
             allowClear: true
         });
         cargarSelects();
+    });
+
+
+    $(document).on('click', '#deleteIngrediente', function (event) {
+        contador>1?$('.ingrediente' + contador ).remove():"";
+        contador>1?contador--:"";
+        
     });
 
 });

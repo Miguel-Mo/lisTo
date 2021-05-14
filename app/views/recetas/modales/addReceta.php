@@ -38,7 +38,7 @@
                                 <option value="6">2 horas</option>
                             </select>
                         </div>
-                        
+
                         <!--proximo dia insertar alimentos tambien borrar en el select los ingredientes cada vez
                         que añadimos uno nuevo y cargar los alimentos tambien falta buscador en esta vista-->
 
@@ -48,7 +48,7 @@
                             </select>
                         </div>
                         <div class="col-3 mt-2">
-                            <input type="text" name="cantidadReceta"  id="cantidadReceta1" placeholder="Cantidad" class="form-control" required>
+                            <input type="text" name="cantidadReceta" id="cantidadReceta1" placeholder="Cantidad" class="form-control" required>
                         </div>
                         <div class="col-3 mt-2">
                             <select class="selectUnidad" name="unidadMedidaReceta" id="unidadMedidaReceta1" required>
@@ -59,9 +59,17 @@
 
                         <div id="containerIngredientes" class="row">
                         </div>
+                        <div class="col-12 mt-2">
+                            <div class="row text-center">
 
-                        <div id="addIngrediente" class="col-12 mt-2 text-center">
-                            <a class="btn"><i class="fas fa-plus-square fa-3x"></i></a>
+                                <div class="col-6" id="addIngrediente">
+                                    <a class="btn"><i class="fas fa-plus-square fa-3x"></i></a>
+                                </div>
+                                <div class="col-6" id="deleteIngrediente">
+                                    <a class="btn"><i class="fas fa-minus-square fa-3x"></i>
+                                </div>
+
+                            </div>
                         </div>
 
 
