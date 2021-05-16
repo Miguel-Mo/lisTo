@@ -52,7 +52,7 @@ $(document).ready(function () {
 
                     '</div>' +
                     '<div class="d-flex flex-row-reverse">' +
-                    '<a href="#" class="btn card-link btn-primary ml-1">Editar Receta</a>' +
+                    '<a href="#" value='+response[index]["id"]+ ' class="btn card-link btn-primary ml-1 editarReceta">Editar Receta</a>' +
                     '<a href="#" value='+response[index]["id"]+ ' class="btn card-link btn-danger eliminarReceta">Eliminar Receta</a>' +
                     ' </div>' +
                     '</div>' +
@@ -93,6 +93,12 @@ $(document).ready(function () {
         eliminarReceta(id);
     });
 
+
+    $(document).on('click', '.editarReceta', function (event) {
+        event.preventDefault();
+        let id = $(this).attr("value");
+        alert("Todavia no se puede editar la receta "+id+". Estamos trabajando en ello");
+    });
 
     function eliminarReceta(id) {
         Swal.fire({
