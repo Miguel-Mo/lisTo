@@ -46,30 +46,18 @@ $(document).ready(function () {
     function cardMaker(response) {
         if (response['Xdefecto'].length > 0) {
             for (let index = 0; index < response['Xdefecto'].length; index++) {
+                let eliminar = response['Xdefecto'][index]['idUsuario'] != 0 ? '<a href="#" class="btn btn-danger eliminarAlimento" value=' + response['Xdefecto'][index]['id'] + ' id="dAlimento' + response['Xdefecto'][index]['id'] + '" style="float: right;" ><i class="fas fa-trash"></i></a>' : "";
+
                 let html = '<div class="col-lg-3 col-12">' +
                     '<div class="card card text-center">' +
                     '<div class="card-body">' +
                     '<b>' + response['Xdefecto'][index]['nombre'] + '</b> ' +
+                    eliminar +
                     '<p>(' + response['Xdefecto'][index]['tipo'] + ')</p>' +
                     '</div>' +
                     '</div>' +
                     '</div>';
                 $("#contenedorAlimentos").append(html)
-            }
-        }
-        if (response['Xusuario'].length > 0) {
-            for (let index = 0; index < response['Xusuario'].length; index++) {
-                let html = '<div class="col-lg-3 col-12">' +
-                    '<div class="card card text-center">' +
-                    '<div class="card-body">' +
-                    '<b>' + response['Xusuario'][index]['nombre'] + '</b>' +
-                    '<a href="#" class="btn btn-danger eliminarAlimento" value=' + response['Xusuario'][index]['id'] + ' id="dAlimento' + response['Xusuario'][index]['id'] + '" style="float: right;" ><i class="fas fa-trash"></i></a>' +
-                    '<p>(' + response['Xusuario'][index]['tipo'] + ')</p>' +
-                    '</div>' +
-                    '</div>' +
-                    '</div>';
-                $("#contenedorAlimentos").append(html)
-
             }
         }
     }

@@ -39,5 +39,11 @@ class Recetas extends Controlador
         $resultado = $this->modeloRecetas->obtenerTodasRecetas();
         echo json_encode($resultado);
     }
+
+    public function obtenerAlimentosRecetas(){
+        $idReceta=$_POST['idReceta'];
+        $resultado = $this->modeloRecetas->obtenerAlimentosRecetas($idReceta);
+        echo json_encode($resultado);
+    }
  
 }

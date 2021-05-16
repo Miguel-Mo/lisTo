@@ -44,22 +44,35 @@ $(document).ready(function () {
         console.log(response);
         if (response.length > 0) {
             for (let index = 0; index < response.length; index++) {
+                let idReceta=response[index]['id'];
+                $.ajax({
+                    type: "POST",
+                    url: url + "/Recetas/obtenerAlimentosRecetas",
+                    data: {idReceta:idReceta},
+                    dataType: "JSON",
+                    success: function (ingredientes) {
+                        console.log(ingredientes);
+                    }
+                });
+                var dificultad=response[index]["dificultad"];
+                dificultadFormated=dificultad==1?'Fácil <i class="fas fa-dot-circle" style="color: green;"></i>':dificultad==2?'Normal <i class="fas fa-dot-circle" style="color: orange;"></i>':'Difícil <i class="fas fa-dot-circle" style="color: red;"></i>';
                 let html = '<div class="col-6">'+
                 '<div class="card" style="background-color: #FFD454; color:black">'+
                     '<div class="card-header">'+
-                        '<h5 class="card-title">Titulo de la Receta</h5>'+
+                        '<h5 class="card-title">'+response[index]["nombre"]+'</h5>'+
     
                         '<div class="d-flex flex-row-reverse">'+
-                            '<a class="m-2" data-toggle="collapse" data-target="#receta1"><i class="fas fa-plus"></i></a>'+
+                            // '<a class="m-2" data-toggle="collapse" data-target="#receta'+index+'"><i class="fas fa-plus"></i></a>'+
                             //<!-- <i class="fas fa-window-minimize"></i> -->
                         '</div>'+
                     '</div>'+
                     '<div class="card-body">'+
     
-                        '<p class="card-text">Tiempo aproximado: 30 minutos <br> Dificultad:Fácil <i class="fas fa-dot-circle" style="color: green;"></i></p>'+
-                        '<div class="row collapse" id="receta1">'+
+                        '<p class="card-text">Tiempo aproximado: '+response[index]["tiempo"]+' <br> Dificultad:'+dificultadFormated+'</p>'+
+                        '<div class="row " id="#receta'+index+'">'+
                             '<div class="col-6">'+
                                 '<ul>'+
+                                
                                     '<li>Ingrediente 1</li>'+
                                    ' <li>Ingrediente 2</li>'+
                                    ' <li>Ingrediente 3</li>'+

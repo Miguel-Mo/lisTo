@@ -33,22 +33,14 @@ class modeloAlimentos
 
     public function insertNuevoAlimento($datos)
     {
-        $this->db->query('INSERT INTO alimento_usuario (nombre, tipo, unidad_medida,idUsuario)
+        $this->db->query('INSERT INTO alimento (nombre, tipo, unidad_medida,idUsuario)
         VALUES ("' . $datos["nombreNuevo"] . '", ' . $datos["categoria"] . ', ' . $datos["unidadMedida"] . ',' . $_SESSION['idUsuario'] . ')');
         $this->db->execute();
     }
 
     public function obtenerAlimentosDefecto()
     {
-        $this->db->query('SELECT a.id,a.nombre,t.tipo FROM alimento a LEFT JOIN tipo_alimento t ON a.tipo=t.id');
-
-        $resultado = $this->db->registros();
-        return $resultado;
-    }
-
-    public function obtenerAlimentosUsuario()
-    {
-        $this->db->query('SELECT au.id,au.nombre,t.tipo FROM alimento_usuario au LEFT JOIN tipo_alimento t ON au.tipo=t.id  WHERE idUsuario=' . $_SESSION['idUsuario']);
+        $this->db->query('SELECT a.id,a.nombre,t.tipo,a.idUsuario FROM alimento a LEFT JOIN tipo_alimento t ON a.tipo=t.id WHERE idUsuario IN(0,' . $_SESSION['idUsuario'].')');
 
         $resultado = $this->db->registros();
         return $resultado;
@@ -57,18 +49,11 @@ class modeloAlimentos
     public function obtenerAlimentosDefectoFiltro($datosFiltro)
     {
         $filtrito=$this->formatedFiltro($datosFiltro);
-        $this->db->query('SELECT a.id,a.nombre,t.tipo FROM alimento a LEFT JOIN tipo_alimento t ON a.tipo=t.id WHERE nombre LIKE "' . $datosFiltro['filtro'] . '%" ' . $filtrito);
+        $this->db->query('SELECT a.id,a.nombre,t.tipo,a.idUsuario FROM alimento a LEFT JOIN tipo_alimento t ON a.tipo=t.id WHERE a.idUsuario IN(0,' . $_SESSION['idUsuario'].') AND  nombre LIKE "' . $datosFiltro['filtro'] . '%" ' . $filtrito);
         $resultado = $this->db->registros();
         return $resultado;
     }
 
-    public function obtenerAlimentosUsuarioFiltro($datosFiltro)
-    {
-        $filtrito=$this->formatedFiltro($datosFiltro);
-        $this->db->query('SELECT a.id,a.nombre,t.tipo FROM alimento_usuario a LEFT JOIN tipo_alimento t ON a.tipo=t.id  WHERE idUsuario=' . $_SESSION['idUsuario'] . ' AND nombre LIKE "' . $datosFiltro['filtro'] . '%" ' . $filtrito);
-        $resultado = $this->db->registros();
-        return $resultado;
-    }
 
     public function formatedFiltro($datosFiltro)
     { 
@@ -91,7 +76,7 @@ class modeloAlimentos
 
     public function eliminarAlimentoById($id){
 
-        $this->db->query('DELETE FROM alimento_usuario WHERE id='.$id);
+        $this->db->query('DELETE FROM alimento WHERE id='.$id);
         $resultado = $this->db->execute()==true?1:0;
         return $resultado;
     }

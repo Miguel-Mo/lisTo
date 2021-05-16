@@ -45,10 +45,8 @@ class Alimentos extends Controlador
     public function obtenerTodosAlimentos()
     {
         $defecto = $this->modeloAlimentos->obtenerAlimentosDefecto();
-        $usuario = $this->modeloAlimentos->obtenerAlimentosUsuario();
         $resultado = [
             'Xdefecto' => $defecto,
-            'Xusuario' =>  $usuario,
         ];
         echo json_encode($resultado);
     }
@@ -56,10 +54,8 @@ class Alimentos extends Controlador
 
     public function obtenerFiltroAlimentos(){
         $defecto = $this->modeloAlimentos->obtenerAlimentosDefectoFiltro($_POST);
-        $usuario = $this->modeloAlimentos->obtenerAlimentosUsuarioFiltro($_POST);
         $resultado = [
             'Xdefecto' => $defecto,
-            'Xusuario' =>  $usuario,
         ];
         echo json_encode($resultado);
     }
@@ -71,11 +67,9 @@ class Alimentos extends Controlador
     public function obtenerTiposyAlimentosRecetas()
     {
         $defecto = $this->modeloAlimentos->obtenerAlimentosDefecto();
-        $usuario = $this->modeloAlimentos->obtenerAlimentosUsuario();
         $unidades = $this->modeloAlimentos->obtenerUnidadesAlimento();
         $resultado = [
             'defecto' => $defecto,
-            'usuario' => $usuario,
             'unidades' =>  $unidades,
         ];
 
