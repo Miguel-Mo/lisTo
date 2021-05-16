@@ -41,73 +41,60 @@ $(document).ready(function () {
     // }
 
     function cardMaker(response) {
-        console.log(response);
         if (response.length > 0) {
             for (let index = 0; index < response.length; index++) {
-                let idReceta=response[index]['id'];
-                $.ajax({
-                    type: "POST",
-                    url: url + "/Recetas/obtenerAlimentosRecetas",
-                    data: {idReceta:idReceta},
-                    dataType: "JSON",
-                    success: function (ingredientes) {
-                        console.log(ingredientes);
-                    }
-                });
-                var dificultad=response[index]["dificultad"];
-                dificultadFormated=dificultad==1?'Fácil <i class="fas fa-dot-circle" style="color: green;"></i>':dificultad==2?'Normal <i class="fas fa-dot-circle" style="color: orange;"></i>':'Difícil <i class="fas fa-dot-circle" style="color: red;"></i>';
-                let html = '<div class="col-6">'+
-                '<div class="card" style="background-color: #FFD454; color:black">'+
-                    '<div class="card-header">'+
-                        '<h5 class="card-title">'+response[index]["nombre"]+'</h5>'+
-    
-                        '<div class="d-flex flex-row-reverse">'+
-                            // '<a class="m-2" data-toggle="collapse" data-target="#receta'+index+'"><i class="fas fa-plus"></i></a>'+
-                            //<!-- <i class="fas fa-window-minimize"></i> -->
-                        '</div>'+
-                    '</div>'+
-                    '<div class="card-body">'+
-    
-                        '<p class="card-text">Tiempo aproximado: '+response[index]["tiempo"]+' <br> Dificultad:'+dificultadFormated+'</p>'+
-                        '<div class="row " id="#receta'+index+'">'+
-                            '<div class="col-6">'+
-                                '<ul>'+
-                                
-                                    '<li>Ingrediente 1</li>'+
-                                   ' <li>Ingrediente 2</li>'+
-                                   ' <li>Ingrediente 3</li>'+
-                                   ' <li>Ingrediente 4</li>'+
-                                   ' <li>Ingrediente 5</li>'+
-                                   ' <li>Ingrediente 6</li>'+
-                                   ' <li>Ingrediente 7</li>'+
-                                   ' <li>Ingrediente 8</li>'+
-    
-                               ' </ul>'+
-                            '</div>'+
-                           ' <div class="col-6">'+
-                                '<ul>'+
-                                   ' <li>Ingrediente 1</li>'+
-                                   ' <li>Ingrediente 2</li>'+
-                                   ' <li>Ingrediente 3</li>'+
-                                  '  <li>Ingrediente 4</li>'+
-                                   ' <li>Ingrediente 5</li>'+
-                                  '  <li>Ingrediente 6</li>'+
-                                   ' <li>Ingrediente 7</li>'+
-                                   ' <li>Ingrediente 8</li>'+
-    
-                               ' </ul>'+
-                           ' </div>'+
-                        '</div>'+
-                        '<div class="d-flex flex-row-reverse">'+
-                            '<a href="#" class="btn card-link btn-primary ml-1">Editar Receta</a>'+
-                            '<a href="#" class="btn card-link btn-danger">Eliminar Receta</a>'+
-                       ' </div>'+
-                    '</div>'+
-                '</div>'+
-           ' </div>';
-                $("#contenedorRecetas").append(html)
+
+                var dificultad = response[index]["dificultad"];
+                dificultadFormated = dificultad == 1 ? 'Fácil <i class="fas fa-dot-circle" style="color: green;"></i>' : dificultad == 2 ? 'Normal <i class="fas fa-dot-circle" style="color: orange;"></i>' : 'Difícil <i class="fas fa-dot-circle" style="color: red;"></i>';
+                let html = '<div class="col-6">' +
+                    '<div class="card" style="background-color: #FFD454; color:black">' +
+                    '<div class="card-header">' +
+                    '<h5 class="card-title">' + response[index]["nombre"] + '</h5>' +
+
+                    '<div class="d-flex flex-row-reverse">' +
+                    '<a class="m-2" data-toggle="collapse" data-target="#receta'+index+'"><i class="fas fa-plus"></i></a>'+
+                    //<!-- <i class="fas fa-window-minimize"></i> -->
+                    '</div>' +
+                    '</div>' +
+                    '<div class="card-body">' +
+
+                    '<p class="card-text">Tiempo aproximado: ' + response[index]["tiempo"] + ' <br> Dificultad:' + dificultadFormated + '</p>' +
+                    '<div class="row collapse" id="receta' + index + '">' +
+
+                    '</div>' +
+                    '<div class="d-flex flex-row-reverse">' +
+                    '<a href="#" class="btn card-link btn-primary ml-1">Editar Receta</a>' +
+                    '<a href="#" class="btn card-link btn-danger">Eliminar Receta</a>' +
+                    ' </div>' +
+                    '</div>' +
+                    '</div>' +
+                    ' </div>';
+                $("#contenedorRecetas").append(html);
+                let idReceta = response[index]['id'];
+                ingredientes(idReceta, index);
             }
         }
+    }
+
+    function ingredientes(idReceta, index) {
+        $.ajax({
+            type: "POST",
+            url: url + "/Recetas/obtenerAlimentosRecetas",
+            data: { idReceta: idReceta },
+            dataType: "JSON",
+            success: function (ingredientes) {
+                let html = '<div class="col-12">' +
+                    '<ul>';
+                for (let index = 0; index < ingredientes.length; index++) {
+                    html += '<li>'+ingredientes[index]['nombre']+', '+ingredientes[index]['cantidad']+ ' ' + ingredientes[index]['descripcion']+'</li>';
+                }
+                html += '</ul>' +
+                    '</div>' +
+                    $("#receta" + index + "").append(html);
+
+
+            }
+        });
     }
 
     function eliminarReceta(id) {

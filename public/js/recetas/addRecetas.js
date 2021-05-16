@@ -22,7 +22,6 @@ $(document).ready(function () {
             url: url + "/Alimentos/obtenerTiposyAlimentosRecetas",
             dataType: "JSON",
             success: function (response) {
-                console.log(response);
                 for (let index = 0; index < response['unidades'].length; index++) {
                     var data = {
                         id: index + 1,
@@ -36,15 +35,6 @@ $(document).ready(function () {
                     var data = {
                         id: index + 1,
                         text: response['defecto'][index]['nombre']
-                    };
-                    var newOption = new Option(data.text, data.id, false, false);
-                    $('.selectIngrediente').append(newOption).trigger('change');
-                }
-
-                for (let index = 0; index < response['usuario'].length; index++) {
-                    var data = {
-                        id: index + 1,
-                        text: response['usuario'][index]['nombre']
                     };
                     var newOption = new Option(data.text, data.id, false, false);
                     $('.selectIngrediente').append(newOption).trigger('change');
