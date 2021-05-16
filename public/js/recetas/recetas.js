@@ -11,34 +11,23 @@ $(document).ready(function () {
         }
     });
 
-    // $("#buscadorAlimentos").keyup(function () {
-    //     filtrar();
-    // });
+    $("#buscadorRecetas").keyup(function () {
+        filtrar();
+    });
 
-
-    // $(document).on('click', '.eliminarAlimento', function (event) {
-    //     event.preventDefault();
-    //     let id = $(this).attr("value");
-    //     eliminarAlimento(id);
-    // });
-
-    // function filtrar() {
-    //     let filtro = $("#buscadorAlimentos").val();
-    //     let lacteo = $("#lacteo").val();
-    //     let vegetal = $("#vegetal").val();
-    //     let carne = $("#carne").val();
-    //     let pescado = $("#pescado").val();
-    //     $.ajax({
-    //         type: "POST",
-    //         url: url + "/Alimentos/obtenerFiltroAlimentos",
-    //         dataType: "JSON",
-    //         data: { filtro: filtro, lacteo: lacteo, vegetal: vegetal, carne: carne, pescado: pescado },
-    //         success: function (response) {
-    //             $("#contenedorAlimentos").empty()
-    //             cardMaker(response);
-    //         }
-    //     });
-    // }
+    function filtrar() {
+        let filtro = $("#buscadorRecetas").val();
+        $.ajax({
+            type: "POST",
+            url: url + "/Recetas/obtenerFiltroRecetas",
+            dataType: "JSON",
+            data: { filtro: filtro },
+            success: function (response) {
+                $("#contenedorRecetas").empty()
+                cardMaker(response);
+            }
+        });
+    }
 
     function cardMaker(response) {
         if (response.length > 0) {

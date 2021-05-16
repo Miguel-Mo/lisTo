@@ -51,4 +51,13 @@ class modeloRecetas
         $resultado = $this->db->execute()==true?1:0;
         return $resultado;
     }
+
+    public function obtenerRecetasFiltro($datosFiltro)
+    {
+        $this->db->query('SELECT r.id,r.nombre,r.dificultad,t.tiempo FROM receta r  
+        LEFT JOIN tiempo_aproximado t ON r.tiempoEstimado=t.id
+        WHERE  idUsuario=' . $_SESSION['idUsuario'] .' AND nombre LIKE "' . $datosFiltro['filtro'] . '%"');
+        $resultado = $this->db->registros();
+        return $resultado;
+    }
 }

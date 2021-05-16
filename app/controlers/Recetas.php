@@ -51,4 +51,9 @@ class Recetas extends Controlador
         $resultado=$this->modeloRecetas->eliminarRecetaById($_POST['id']);
         echo $resultado;
     }
+
+    public function obtenerFiltroRecetas(){
+        $resultado = $this->modeloRecetas->obtenerRecetasFiltro($_POST);
+        echo json_encode($resultado);
+    }
 }
