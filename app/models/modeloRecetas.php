@@ -44,4 +44,11 @@ class modeloRecetas
         return $resultado;
     }
    
+    public function eliminarRecetaById($id){
+        $this->db->query('DELETE FROM receta_alimento WHERE idReceta='.$id);
+        $this->db->execute();
+        $this->db->query('DELETE FROM receta WHERE id='.$id);
+        $resultado = $this->db->execute()==true?1:0;
+        return $resultado;
+    }
 }

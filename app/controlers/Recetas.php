@@ -46,4 +46,9 @@ class Recetas extends Controlador
         echo json_encode($resultado);
     }
  
+
+    public function eliminarReceta(){
+        $resultado=$this->modeloRecetas->eliminarRecetaById($_POST['id']);
+        echo $resultado;
+    }
 }

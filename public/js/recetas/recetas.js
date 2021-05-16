@@ -43,7 +43,7 @@ $(document).ready(function () {
     function cardMaker(response) {
         if (response.length > 0) {
             for (let index = 0; index < response.length; index++) {
-
+                console.log(response);
                 var dificultad = response[index]["dificultad"];
                 dificultadFormated = dificultad == 1 ? 'Fácil <i class="fas fa-dot-circle" style="color: green;"></i>' : dificultad == 2 ? 'Normal <i class="fas fa-dot-circle" style="color: orange;"></i>' : 'Difícil <i class="fas fa-dot-circle" style="color: red;"></i>';
                 let html = '<div class="col-6">' +
@@ -64,7 +64,7 @@ $(document).ready(function () {
                     '</div>' +
                     '<div class="d-flex flex-row-reverse">' +
                     '<a href="#" class="btn card-link btn-primary ml-1">Editar Receta</a>' +
-                    '<a href="#" class="btn card-link btn-danger">Eliminar Receta</a>' +
+                    '<a href="#" value='+response[index]["id"]+ ' class="btn card-link btn-danger eliminarReceta">Eliminar Receta</a>' +
                     ' </div>' +
                     '</div>' +
                     '</div>' +
@@ -97,9 +97,17 @@ $(document).ready(function () {
         });
     }
 
+
+    $(document).on('click', '.eliminarReceta', function (event) {
+        event.preventDefault();
+        let id = $(this).attr("value");
+        eliminarReceta(id);
+    });
+
+
     function eliminarReceta(id) {
         Swal.fire({
-            title: '¿Seguro que quieres eliminar este alimento?',
+            title: '¿Seguro que quieres eliminar esta receta?',
             showCancelButton: true,
             confirmButtonText: `Si`,
         }).then((result) => {
