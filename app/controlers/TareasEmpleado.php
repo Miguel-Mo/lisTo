@@ -42,24 +42,15 @@ class TareasEmpleado extends Controlador
                      ];
                     $this->vista('tareasEmpleado/tareasEmpleado', $datos);
                 } else {
-                    if ($_SESSION['rol'] != 1) {
-                        $centro = $_SESSION['centro'];
 
-                        // redirecciono a la lista de empleados del centro
-                        redireccionar('/Empleados/EmpleadosCentro/'.$centro->idCentro);
-                    } else {
                         redireccionar('/Inicio');
-                    }
+                    
                 }
                 die;
             } else {
-                if ($_SESSION['rol'] != 1) {
-                    $centro = $_SESSION['centro'];
 
-                } else {
                     redireccionar('/Inicio');
-                }
-                die;
+          
             }
         }
     }
@@ -95,26 +86,15 @@ class TareasEmpleado extends Controlador
                      ];
                     $this->vista('tareasEmpleado/tareasEmpleado', $datos);
                 } else {
-                    if ($_SESSION['rol'] != 1) {
-                        $centro = $_SESSION['centro'];
-
-                        // redirecciono a la lista de empleados del centro
-                        redireccionar('/Empleados/EmpleadosCentro/'.$centro->idCentro);
-                    } else {
+                   
                         redireccionar('/Inicio');
-                    }
+                    
                 }
                 die;
             } else {
-                if ($_SESSION['rol'] != 1) {
-                    $centro = $_SESSION['centro'];
-
-                    // redirecciono a la lista de empleados del centro
-                    redireccionar('/Empleados/EmpleadosCentro/'.$centro->idCentro);
-                } else {
+                
                     redireccionar('/Inicio');
-                }
-                die;
+      
             }
         }
     }

@@ -10,10 +10,7 @@ if (!isset($_SESSION)) {
     <strong>
         <?php if ($_SESSION['rol'] == 1) { ?>
         <a href="<?php echo RUTA_URL; ?>/Inicio" class="brand-link">
-            <?php } else { ?>
-            <a href="<?php echo RUTA_URL.'/Empleados/EmpleadosCentro/'.$_SESSION['centro']->idCentro; ?>"
-                class="brand-link">
-                <?php } ?>
+            <?php }  ?>
                 <img src="<?php echo LOGO; ?>" alt="CASA KIKI" class="brand-image" style="opacity: 1">
                 <span class="brand-text font-weight-bold text-bold text-choco fuenteKiki">Lis<b
                         class="text-kiki">T</b>o</span>
@@ -98,10 +95,10 @@ if (!isset($_SESSION)) {
                 </li>
                 <?php } ?>
                 <li class="nav-item">
-                    <a href="<?php echo RUTA_URL; ?>/Empleados" class="nav-link <?php echo (strpos($_SERVER['REQUEST_URI'], '/Empleados')) ? ' active' : ''; ?>">
+                    <a href="<?php echo RUTA_URL; ?>/Listas" class="nav-link <?php echo (strpos($_SERVER['REQUEST_URI'], '/Listas')) ? ' active' : ''; ?>">
                         <i class="nav-icon fas fa-user-ninja"></i>
                         <p>
-                            Empleados
+                            Listas
                             <!-- <span class="right badge badge-danger">60</span> -->
                         </p>
                     </a>

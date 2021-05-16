@@ -1,13 +1,13 @@
 <?php
 
-class Empleados extends Controlador
+class Listas extends Controlador
 {
     public function __construct()
     {
         if (!isset($_SESSION)) {
             session_start();
         }
-        $this->modeloEmpleados = $this->modelo('modeloEmpleados');
+        $this->modeloListas = $this->modelo('modeloListas');
         $this->modeloBBDD = $this->modelo('modeloBBDD');
     }
 
@@ -21,7 +21,7 @@ class Empleados extends Controlador
         $datos = [
            
         ];
-        $this->vista('empleados/empleados', $datos);
+        $this->vista('listas/listas', $datos);
     }
 
   

@@ -5,7 +5,7 @@
  *
  * @author Usuario
  */
-class modeloEmpleados {
+class modeloListas {
     
     
     public function __construct(){

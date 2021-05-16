@@ -45,9 +45,7 @@ function rowlinkModal(idTable) {
 
             if (idTable === "usuarios-table") {
                 cargarForm("./Usuarios/obtenerUsuario", idElemento, idModal, "formEditarUsuario");
-            } else if (idTable === "empleados-table") {
-                cargarForm("./Empleados/obtenerEmpleado", idElemento, idModal, "formEditarEmpleado");
-            } else if (idTable === "tareas-table") {
+            }  else if (idTable === "tareas-table") {
                 cargarForm("./Tareas/obtenerTarea", idElemento, idModal, "formEditarTarea");
             } else if (idTable === "zonas-table") {
                 cargarForm("./Zonas/obtenerZona", idElemento, idModal, "formEditarZona");

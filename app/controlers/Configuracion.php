@@ -20,17 +20,9 @@ class Configuracion extends Controlador
         if (!isset($_SESSION)) {
             session_start();
         }
-        if ($_SESSION['rol'] != 1) {
-            $centro = $_SESSION['centro'];
-
-            // redirecciono a la lista de empleados del centro
-            redireccionar('/Empleados/EmpleadosCentro/'.$centro->idCentro);
-            die;
-        }
 
         $datos = [
            'usuarios' => $this->modeloUsuarios->obtenerUsuarios(),
-           'empleados' => $this->modeloEmpleados->obtenerEmpleados(),
            'zonas' => $this->modeloZonas->obtenerZonas(),
            'tareas_tipos' => $this->modeloTiposTarea->obtenerTiposTarea(),
         ];

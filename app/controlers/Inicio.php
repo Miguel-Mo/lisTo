@@ -19,7 +19,6 @@ class Inicio extends Controlador
             // $centro = $_SESSION['centro'];
 
             // redirecciono a la lista de empleados del centro
-            // redireccionar('/Empleados/EmpleadosCentro/'.$centro->idCentro);
             $this->vista('inicio/inicio', "");
             die;
         }

@@ -16,10 +16,7 @@ if (!isset($_SESSION)) {
             <?php if ($_SESSION['rol'] == 1) { ?>
             <a href="<?php echo RUTA_URL; ?>/Inicio" class="nav-link">Inicio</a>
             <?php } else { ?>
-            <a href="<?php echo RUTA_URL.'/Empleados/EmpleadosCentro/'.$_SESSION['centro']->idCentro; ?>"
-                class="nav-link">
-                <?php echo 'Centro '.$_SESSION['centro']->nombreCentro.', '.$_SESSION['centro']->poblacionCentro; ?>
-            </a>
+           
             <?php } ?>
         </li>
     </ul>
