@@ -33,7 +33,7 @@ $(document).ready(function () {
 
                 for (let index = 0; index < response['defecto'].length; index++) {
                     var data = {
-                        id: index + 1,
+                        id: response['defecto'][index]['id'],
                         text: response['defecto'][index]['nombre']
                     };
                     var newOption = new Option(data.text, data.id, false, false);
