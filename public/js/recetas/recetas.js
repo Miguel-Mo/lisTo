@@ -37,7 +37,7 @@ $(document).ready(function () {
                 let html = '<div class="col-6">' +
                     '<div class="card" style="background-color: #FFD454; color:black">' +
                     '<div class="card-header">' +
-                    '<h5 class="card-title">' + response[index]["nombre"] + '</h5>' +
+                    '<h5 class="card-title">' + response[index]["nombre"] + '</h5> ' +
 
                     '<div class="d-flex flex-row-reverse">' +
                     '<a class="m-2" data-toggle="collapse" data-target="#receta'+index+'"><i class="fas fa-plus"></i></a>'+
@@ -53,6 +53,7 @@ $(document).ready(function () {
                     '<div class="d-flex flex-row-reverse">' +
                     '<a href="#" value='+response[index]["id"]+ ' class="btn card-link btn-primary ml-1 editarReceta">Editar Receta</a>' +
                     '<a href="#" value='+response[index]["id"]+ ' class="btn card-link btn-danger eliminarReceta">Eliminar Receta</a>' +
+                    '<button type="button" class="btn btn-success ml-2"><i class="far fa-check-square"></i> Añadir a la lista</button>'+
                     ' </div>' +
                     '</div>' +
                     '</div>' +
