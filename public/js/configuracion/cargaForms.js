@@ -5,20 +5,16 @@ function cargarForm(url, id, modal, form) {
         url: url,
         data: { id: id },
         success: function(datos) {
-            console.log(datos);
             const json = JSON.parse(datos)
-            console.log(form, json);
             $("#" + form + " input").each(function() {
                 let name = $(this).attr("name")
                 if (name !== "clave" && name !== "password")
                     $(this).val(json[name])
-                console.log(name, json[name]);
             })
             $("#" + form + " textarea").each(function() {
                 let name = $(this).attr("name")
                 if (name !== "clave" && name !== "password")
                     $(this).val(json[name])
-                console.log(name, json[name]);
             })
             $("#" + form + " select").each(function() {
                 let name = $(this).attr("name")
@@ -32,7 +28,6 @@ function cargarForm(url, id, modal, form) {
 
 function rowlinkModal(idTable) {
     $('#' + idTable + ' td.row-link').each(function() {
-        // idconsole.log($(this).parent().data("id"))
         $(this).css('cursor', 'pointer').hover(
             function() {
                 $(this).parent().addClass('active');

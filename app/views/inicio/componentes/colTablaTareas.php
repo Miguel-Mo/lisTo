@@ -5,7 +5,7 @@
         <div class="card-header">
             <h3 class="card-title">
                 <i class="fas fa-table"></i>
-                    Peso Trabajos Por Zona
+                    Listas más usadas
             </h3>
             <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -28,7 +28,7 @@
         <div class="card-header">
             <h3 class="card-title">
                 <i class="fas fa-table"></i>
-                 Estado Trabajos Por Zona
+                 Recetas más usadas
             </h3>
             <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse">

@@ -4,7 +4,6 @@ function ajaxPostAndReload(url, object) {
         url: url,
         data: object,
         success: function(ev) {
-            //console.log(ev);
             // $("#lista-asignados").load(window.location.href + " #lista-asignados > ul");
             // $("#nuevoClienteModal").modal("toggle");
 
@@ -71,7 +70,6 @@ function megaCrudHandlerCrusher(idFormNuevo, idFormEditar, urlNuevo, urlEditar, 
         // } else {
         //     sentform = $(idFormNuevo).serializeArray();
         // }
-        //console.log(sentform);
         ajaxPostAndReload(urlNuevo, { form: sentform })
     });
 

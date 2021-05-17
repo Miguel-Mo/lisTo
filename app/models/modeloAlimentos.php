@@ -80,4 +80,9 @@ class modeloAlimentos
         $resultado = $this->db->execute()==true?1:0;
         return $resultado;
     }
+
+    public function eliminarAlimentoRecetaById($id){
+        $this->db->query('DELETE FROM receta_alimento WHERE idAlimento='.$id);
+        $this->db->execute();
+    }
 }

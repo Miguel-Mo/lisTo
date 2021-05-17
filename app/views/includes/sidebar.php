@@ -86,7 +86,7 @@ if (!isset($_SESSION)) {
                 </li>
                 <li class="nav-item">
                     <a href="<?php echo RUTA_URL; ?>/Recetas" class="nav-link <?php echo (strpos($_SERVER['REQUEST_URI'], '/Recetas')) ? ' active' : ''; ?>">
-                        <i class="nav-icon fas fa-store"></i>
+                    <i class="nav-icon fas fa-receipt"></i>
                         <p>
                             Recetas
                             <!-- <span class="right badge badge-danger">5</span> -->
@@ -96,7 +96,7 @@ if (!isset($_SESSION)) {
                 <?php } ?>
                 <li class="nav-item">
                     <a href="<?php echo RUTA_URL; ?>/Listas" class="nav-link <?php echo (strpos($_SERVER['REQUEST_URI'], '/Listas')) ? ' active' : ''; ?>">
-                        <i class="nav-icon fas fa-user-ninja"></i>
+                        <i class="nav-icon far fa-list-alt"></i>
                         <p>
                             Listas
                             <!-- <span class="right badge badge-danger">60</span> -->

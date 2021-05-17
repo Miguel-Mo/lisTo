@@ -60,6 +60,7 @@ class Alimentos extends Controlador
         echo json_encode($resultado);
     }
     public function eliminarAlimento(){
+        $this->modeloAlimentos->eliminarAlimentoRecetaById($_POST['id']);
         $resultado=$this->modeloAlimentos->eliminarAlimentoById($_POST['id']);
         echo $resultado;
     }

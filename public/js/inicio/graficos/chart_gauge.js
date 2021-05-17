@@ -2,7 +2,7 @@ var chartGauge = c3.generate({
     bindto: '#gauge',
     data: {
         columns: [
-            ['Mostrador', 91.4]
+            ['Ensalada César', 91.4]
         ],
         type: 'gauge',
         onclick: function(d, i) { console.log("onclick", d, i); },
@@ -37,7 +37,7 @@ var chartGauge = c3.generate({
 setTimeout(function() {
     chartGauge.load({
         columns: [
-            ['Almacen', 10]
+            ['Pollo al limón', 10]
         ]
     });
 }, 1000);
@@ -45,7 +45,7 @@ setTimeout(function() {
 setTimeout(function() {
     chartGauge.load({
         columns: [
-            ['Horno', 50]
+            ['Pato a la naranja', 50]
         ]
     });
 }, 2000);
@@ -53,7 +53,7 @@ setTimeout(function() {
 setTimeout(function() {
     chartGauge.load({
         columns: [
-            ['Obrador', 70]
+            ['Tortilla de patatas', 70]
         ]
     });
 }, 3000);
@@ -61,7 +61,7 @@ setTimeout(function() {
 setTimeout(function() {
     chartGauge.load({
         columns: [
-            ['Almacen', 20]
+            ['Arroz 3 delicias', 20]
         ]
     });
 }, 4000);
@@ -69,7 +69,7 @@ setTimeout(function() {
 setTimeout(function() {
     chartGauge.load({
         columns: [
-            ['Horno', 100]
+            ['Ensalada', 100]
         ]
     });
 }, 5000);

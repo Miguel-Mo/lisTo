@@ -32,7 +32,6 @@ $(document).ready(function () {
     function cardMaker(response) {
         if (response.length > 0) {
             for (let index = 0; index < response.length; index++) {
-                console.log(response);
                 var dificultad = response[index]["dificultad"];
                 dificultadFormated = dificultad == 1 ? 'Fácil <i class="fas fa-dot-circle" style="color: green;"></i>' : dificultad == 2 ? 'Normal <i class="fas fa-dot-circle" style="color: orange;"></i>' : 'Difícil <i class="fas fa-dot-circle" style="color: red;"></i>';
                 let html = '<div class="col-6">' +
