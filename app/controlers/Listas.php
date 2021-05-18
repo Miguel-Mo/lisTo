@@ -24,5 +24,16 @@ class Listas extends Controlador
         $this->vista('listas/listas', $datos);
     }
 
-  
+    public function insertRecetasToListaTemporal(){
+        $this->modeloListas->insertRecetasToListaTemporal($_POST['idReceta']);
+    }
+
+    public function traerListaTemporal(){
+        $resultado=$this->modeloListas->traerListaTemporal();
+        echo json_encode($resultado);
+    }  
+
+    public function eliminarRecetasListaTemporal(){
+        $this->modeloListas->eliminarRecetasListaTemporal($_POST['idEliminar']);
+    }
 }

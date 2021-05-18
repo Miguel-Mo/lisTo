@@ -53,7 +53,7 @@ $(document).ready(function () {
                     '<div class="d-flex flex-row-reverse">' +
                     '<a href="#" value='+response[index]["id"]+ ' class="btn card-link btn-primary ml-1 editarReceta">Editar Receta</a>' +
                     '<a href="#" value='+response[index]["id"]+ ' class="btn card-link btn-danger eliminarReceta">Eliminar Receta</a>' +
-                    '<button type="button" class="btn btn-success ml-2"><i class="far fa-check-square"></i> Añadir a la lista</button>'+
+                    '<a type="button" value='+response[index]["id"]+ ' class="btn card-link btn-success ml-2 addListaTemp"><i class="far fa-check-square"></i> Añadir a la lista</a>'+
                     ' </div>' +
                     '</div>' +
                     '</div>' +

@@ -70,6 +70,9 @@ $.widget.bridge('uibutton', $.ui.button)
 <script src="<?php echo RUTA_URL; ?>/public/js/recetas/addRecetas.js"></script>
 <script src="<?php echo RUTA_URL; ?>/public/js/recetas/recetas.js"></script>
 
+<!-- jsLista -->
+<script src="<?php echo RUTA_URL; ?>/public/js/addLista.js"></script>
+
 
 
 <!-- Select2 -->
