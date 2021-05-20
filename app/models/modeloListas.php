@@ -20,13 +20,27 @@ class modeloListas {
     }    
 
     public function traerListaTemporal(){
-        $this->db->query('SELECT * FROM lista_temporal where idUsuario='. $_SESSION['idUsuario'] );
+        $this->db->query('SELECT lt.*,r.nombre FROM lista_temporal lt
+        LEFT JOIN receta r ON lt.idReceta=r.id
+        where lt.idUsuario='. $_SESSION['idUsuario'] );
         $resultado = $this->db->registros();
         return $resultado;
     }  
 
-    public function eliminarRecetasListaTemporal($idReceta){
+    public function eliminarItemRecetasListaTemporal($idReceta){
         $this->db->query('DELETE FROM lista_temporal where idUsuario='. $_SESSION['idUsuario'].' AND id='.$idReceta);
         $this->db->execute();
+    }
+
+    public function obtenerAlimentosDesdeTemporal($idListaTemporal){
+        $this->db->query('SELECT a.nombre,ra.idAlimento,SUM(ra.cantidad),um.id,um.descripcion FROM lista_temporal lt
+        LEFT JOIN receta r ON lt.idReceta=r.id
+        LEFT JOIN receta_alimento ra ON r.id=ra.idReceta
+        LEFT JOIN alimento a ON ra.idAlimento=a.id 
+        LEFT JOIN unidad_medida um on ra.idUnidadMedida=um.id
+        where lt.idUsuario='. $_SESSION['idUsuario'] .' 
+        GROUP BY ra.idAlimento, ra.idUnidadMedida');
+        $resultado = $this->db->registros();
+        return $resultado;
     }
 }

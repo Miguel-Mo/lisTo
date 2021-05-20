@@ -19,7 +19,7 @@ $(document).ready(function () {
 
     $(document).on('click', '.eli', function (event) {
         let idEliminar = $(this).data("value");
-        eliminarListaTemporal(idEliminar);
+        eliminarItemListaTemporal(idEliminar);
         cargarListaTemporal();
 
     })

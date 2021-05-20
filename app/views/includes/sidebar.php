@@ -20,51 +20,12 @@ if (!isset($_SESSION)) {
 
     <!-- Sidebar -->
     <div class="sidebar bg-choco">
-        <!-- Sidebar user panel (optional) -->
-        <!-- <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-            <div class="image">
-                <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-            </div>
-            <div class="info">
-                <a href="#" class="d-block">Alexander Pierce</a>
-            </div>
-        </div> -->
-
-        <!-- SidebarSearch Form -->
-        <!-- <div class="form-inline">
-            <div class="input-group" data-widget="sidebar-search">
-                <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-                <div class="input-group-append">
-                    <button class="btn btn-sidebar">
-                        <i class="fas fa-search fa-fw"></i>
-                    </button>
-                </div>
-            </div>
-        </div> -->
-
         <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-                <?php if ($_SESSION['rol'] == 1) { ?>
-                <!-- <li class="nav-item menu-open">
-                    <a href="#" class="nav-link active">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
-                        <p>
-                            Dashboard
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="<?php echo RUTA_URL; ?>/Inicio" class="nav-link active">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>General</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li> -->
+
                 <?php //echo (str_contains($_SERVER['REQUEST_URI'], '/Inicio'))?' active':'';?>
                 <li class="nav-item">
                     <a href="<?php echo RUTA_URL; ?>/Inicio" class="nav-link <?php echo (strpos($_SERVER['REQUEST_URI'], '/Inicio')) ? ' active' : ''; ?>">
@@ -93,7 +54,6 @@ if (!isset($_SESSION)) {
                         </p>
                     </a>
                 </li>
-                <?php } ?>
                 <li class="nav-item">
                     <a href="<?php echo RUTA_URL; ?>/Listas" class="nav-link <?php echo (strpos($_SERVER['REQUEST_URI'], '/Listas')) ? ' active' : ''; ?>">
                         <i class="nav-icon far fa-list-alt"></i>

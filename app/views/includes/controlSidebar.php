@@ -18,12 +18,9 @@
                 <!-- /.card-header -->
                 <div class="card-body p-1">
                     <ul class="list-group text-choco small" id="listaTemporal">
-                        <li class="list-group-item d-flex justify-content-between align-items-center"  style="color: black;">
-                            Crear nuevo producto
-                            <span class="badge badge-choco badge-pill"><i class="fas fa-check text-kiki"></i></span>
-                        </li>
                     </ul>
                 </div>
+                <button type="button" id="guardarListaTemporal" class="btn btn-primary">Guardar</button>
                 <!-- /.card-body -->
             </div>
             <!-- /.card -->
