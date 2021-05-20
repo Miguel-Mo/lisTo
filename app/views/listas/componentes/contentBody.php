@@ -4,7 +4,7 @@
 
         <!-- Main row -->
         <div class="row">
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <div class="card" style="background-color: #FFD454; color:black">
                     <div class="card-header">
                         <h5 class="card-title">Lista 17/05/21 </h5>
@@ -33,7 +33,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <div class="card" style="background-color: #FFD454; color:black">
                     <div class="card-header">
                         <h5 class="card-title">Lista 17/05/21 </h5>
@@ -62,7 +62,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <div class="card" style="background-color: #FFD454; color:black">
                     <div class="card-header">
                         <h5 class="card-title">Lista 16/05/21 </h5>
@@ -91,7 +91,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <div class="card" style="background-color: #FFD454; color:black">
                     <div class="card-header">
                         <h5 class="card-title">Lista 10/05/21 </h5>

@@ -34,7 +34,7 @@ $(document).ready(function () {
             for (let index = 0; index < response.length; index++) {
                 var dificultad = response[index]["dificultad"];
                 dificultadFormated = dificultad == 1 ? 'Fácil <i class="fas fa-dot-circle" style="color: green;"></i>' : dificultad == 2 ? 'Normal <i class="fas fa-dot-circle" style="color: orange;"></i>' : 'Difícil <i class="fas fa-dot-circle" style="color: red;"></i>';
-                let html = '<div class="col-6">' +
+                let html = '<div class="col-12 col-md-6">' +
                     '<div class="card" style="background-color: #FFD454; color:black">' +
                     '<div class="card-header">' +
                     '<h5 class="card-title">' + response[index]["nombre"] + '</h5> ' +
