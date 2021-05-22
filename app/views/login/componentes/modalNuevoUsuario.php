@@ -34,7 +34,7 @@
 </div>
 
 <script>
-// queda cifrar la contraseña y comprobar que ese email no esta cogido ya
+// queda cifrar la contraseña
     $(document).ready(function() {
         $(document).on('click', '#registroUsuario', function(event) {
             if ($("#inputNombreNuevo").val() != "" && $("#direccionNuevo").val() != "" && $("#mailNuevo").val() != "" && $("#passNuevo").val() != "") {

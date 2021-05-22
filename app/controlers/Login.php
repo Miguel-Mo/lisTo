@@ -28,11 +28,10 @@ class Login extends Controlador
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $mail = trim($_POST['mail']);
             $pass = trim($_POST['pass']);
-
+            
             $usuario = $this->modeloLogin->obtenerUsuarioMail($mail);
 
-            //if ($usuario->mailUsuario == $mail && password_verify($pass, $usuario->pass)) {
-            if ($usuario->emailUsuario == $mail && $pass == $usuario->pass) {
+            if ($usuario->emailUsuario == $mail && password_verify($pass, $usuario->pass)) {
                 $validacion = true;
                 if (!isset($_SESSION)) {
                     session_start();
