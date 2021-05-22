@@ -56,4 +56,15 @@ class modeloListas {
         $this->db->query('DELETE FROM lista_temporal where idUsuario='. $_SESSION['idUsuario']);
         $this->db->execute();
     }
+
+    public function obtenerTodasListas(){
+        $this->db->query('SELECT * FROM lista l  
+        WHERE  idUsuario=' . $_SESSION['idUsuario']);
+        $resultado = $this->db->registros();
+        for ($i=0; $i < count($resultado); $i++) { 
+            $resultado[$i]->alimentosJSON=json_decode($resultado[$i]->alimentosJSON);
+        }
+        
+        return $resultado;
+    }
 }

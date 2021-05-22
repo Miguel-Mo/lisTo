@@ -28,7 +28,7 @@ $(document).ready(function () {
             }
         });
     }
-//TODO ELIMINAR RECETAS Y ADD NO CARGA BIEN
+    //TODO ELIMINAR RECETAS Y ADD NO CARGA BIEN
     function cardMaker(response) {
         if (response.length > 0) {
             for (let index = 0; index < response.length; index++) {
@@ -53,7 +53,7 @@ $(document).ready(function () {
                     '<div class="d-flex flex-row-reverse">' +
                     '<a href="#" value='+response[index]["id"]+ ' class="btn card-link btn-primary ml-1 editarReceta">Editar Receta</a>' +
                     '<a href="#" value='+response[index]["id"]+ ' class="btn card-link btn-danger eliminarReceta">Eliminar Receta</a>' +
-                    '<a type="button" value='+response[index]["id"]+ ' class="btn card-link btn-success ml-2 addListaTemp"><i class="far fa-check-square"></i> Añadir a la lista</a>'+
+                    '<a type="button" value='+response[index]["id"]+ ' class="btn card-link btn-success ml-2 addListaTemp text-white"><i class="far fa-check-square"></i> Añadir a la lista</a>'+
                     ' </div>' +
                     '</div>' +
                     '</div>' +

@@ -48,4 +48,9 @@ class Listas extends Controlador
         //TODO LATER AGRUPAR ALIMENTOS CON LA MISMA ID Y LUEGO CONCATENARLOS CON DIFERENTES CANTIDADES
 
     }
+
+    public function obtenerTodasListas(){
+        $resultado = $this->modeloListas->obtenerTodasListas();
+        echo json_encode($resultado);
+    }
 }

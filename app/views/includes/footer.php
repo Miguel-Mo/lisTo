@@ -72,6 +72,8 @@ $.widget.bridge('uibutton', $.ui.button)
 
 <!-- jsLista -->
 <script src="<?php echo RUTA_URL; ?>/public/js/addLista.js"></script>
+<script src="<?php echo RUTA_URL; ?>/public/js/listas/listas.js"></script>
+
 
 
 
