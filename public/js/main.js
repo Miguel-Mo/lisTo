@@ -34,7 +34,7 @@ function eliminarItemListaTemporal(idEliminar) {
         data: { idEliminar: idEliminar },
         dataType: "JSON",
         success: function (response) {
-            
+
         }
     });
 }
@@ -42,7 +42,7 @@ function eliminarItemListaTemporal(idEliminar) {
 $(document).on('click', '#guardarListaTemporal', function (event) {
 
     var arrayListIdsListaTemporal = [];
-    $("#listaTemporal li").each(function () { arrayListIdsListaTemporal.push($(this).data( "value")) });
+    $("#listaTemporal li").each(function () { arrayListIdsListaTemporal.push($(this).data("value")) });
 
     $.ajax({
         type: "POST",
@@ -50,7 +50,13 @@ $(document).on('click', '#guardarListaTemporal', function (event) {
         data: { arrayListIdsListaTemporal: arrayListIdsListaTemporal },
         dataType: "JSON",
         success: function (response) {
-            
+            Swal.fire({
+                title: 'Lista guardada!',
+                confirmButtonText: `Continuar`,
+            }).then((result) => {
+                location.reload();
+            })
+
         }
     });
 

@@ -33,7 +33,7 @@ class modeloListas {
     }
 
     public function obtenerAlimentosDesdeTemporal($idListaTemporal){
-        $this->db->query('SELECT a.nombre,ra.idAlimento,SUM(ra.cantidad),um.id,um.descripcion FROM lista_temporal lt
+        $this->db->query('SELECT a.nombre,ra.idAlimento,SUM(ra.cantidad) as cantidad,um.id as unidadMedida,um.descripcion FROM lista_temporal lt
         LEFT JOIN receta r ON lt.idReceta=r.id
         LEFT JOIN receta_alimento ra ON r.id=ra.idReceta
         LEFT JOIN alimento a ON ra.idAlimento=a.id 
@@ -42,5 +42,18 @@ class modeloListas {
         GROUP BY ra.idAlimento, ra.idUnidadMedida');
         $resultado = $this->db->registros();
         return $resultado;
+    }
+
+    public function insertNuevaLista($arrayAlimentos){
+        $jsonArray=json_encode($arrayAlimentos);
+        $idUsuario=$_SESSION['idUsuario'];
+        $this->db->query("INSERT INTO lista (alimentosJSON,idUsuario)
+        VALUES ( '$jsonArray' , $idUsuario )");
+        $this->db->execute();
+    }   
+
+    public function eliminarListaTemporalUsuario(){
+        $this->db->query('DELETE FROM lista_temporal where idUsuario='. $_SESSION['idUsuario']);
+        $this->db->execute();
     }
 }

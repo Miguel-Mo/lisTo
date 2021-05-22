@@ -42,10 +42,10 @@ class Listas extends Controlador
     {
         $arrayAlimentos = [];
         $arrayAlimentos=$this->modeloListas->obtenerAlimentosDesdeTemporal($_POST['arrayListIdsListaTemporal']);
+        $this->modeloListas->insertNuevaLista($arrayAlimentos);
+        $this->modeloListas->eliminarListaTemporalUsuario();
+        echo json_encode(1);
         //TODO LATER AGRUPAR ALIMENTOS CON LA MISMA ID Y LUEGO CONCATENARLOS CON DIFERENTES CANTIDADES
-        //TODO INSERTAR ALIMENTOS EN LISTA DE LA COMPRA
-        //INSERTARE EL JSON CON NOMBRE DEL ALIMENTO NOMBRE TIPO UNIDAD CANTIDAD PARA MOSTRARLO DIRECTAMENTE TAMBIEN PUEDO ALMACENAR LOS IDS EN EL JSON PARA FACILITAR EL EDITAR MAS TARDE
-        //TODO ELIMINAR LISTA TEMPORAL
-       
+
     }
 }
