@@ -1,4 +1,4 @@
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -48,7 +48,15 @@
                         form: form
                     },
                     success: function(response) {
-                        response == 1 ? alert("usuario registrado") : alert("Ha habido un error vuelve a intentarlo");
+                        if(response==1){
+                            alert("usuario registrado");
+                            $('#registerModal').modal('hide');
+                        }  else if(response==3){
+                            alert("Este correo ya está registrado, prueba con otro");
+                        }else{
+                            alert("Ha habido un error, prueba otra vez");
+                        }
+
                     }
                 });
             } else {

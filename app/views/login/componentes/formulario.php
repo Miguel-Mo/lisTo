@@ -11,7 +11,7 @@
 
 </form>
 
-<a data-toggle="modal" href="" data-target="#exampleModal">
+<a data-toggle="modal" href="" data-target="#registerModal">
     ¿Quieres registrarte?
 </a>
 

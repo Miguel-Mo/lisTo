@@ -5,7 +5,6 @@
         <!-- Main row -->
         <div class="row">
             <!-- FILTER col -->
-            <?php include_once(RUTA_APP . '/views/inicio/componentes/colFiltros.php'); ?>
             <?php include_once(RUTA_APP . '/views/inicio/componentes/listaActual.php'); ?>
 
             <!-- /.FILTER col -->

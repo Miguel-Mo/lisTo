@@ -44,13 +44,21 @@ class modeloLogin {
         return $fila;
     }
 
+    public function comprobarEmail($mail){
+        $this->db->query(" SELECT * FROM usuarios WHERE emailUsuario='$mail'");
+        $resultado = $this->db->registro();
+        $resultado==false?$resultado=1:$resultado=0;
+        return $resultado;
+        
+    }
+
+
     public function registroNuevoUsuario($nuevoRegistro){
-        $sql='INSERT INTO usuarios (nombreUsuario, emailUsuario, password,ciudad,idRolUsuario)
-        VALUES ("' . $nuevoRegistro["nombreNuevo"] . '", ' . $nuevoRegistro["mailNuevo"] . ', ' . $nuevoRegistro["passNuevo"] . ',' . $nuevoRegistro['direccionNuevo'] . ',1)';
         $this->db->query('INSERT INTO usuarios (nombreUsuario, emailUsuario, password,ciudad,idRolUsuario)
         VALUES ("' . $nuevoRegistro["nombreNuevo"] . '", "' . $nuevoRegistro["mailNuevo"] . '", "' . $nuevoRegistro["passNuevo"] . '","' . $nuevoRegistro['direccionNuevo'] . '",1)');
         $resultado=$this->db->execute()==true?1:0;
         return $resultado;
     }
+
 
 }

@@ -63,7 +63,8 @@ class Login extends Controlador
     public function registroNuevoUsuario()
     {
         parse_str($_POST['form'], $nuevoRegistro);
-        $resultado = $this->modeloLogin->registroNuevoUsuario($nuevoRegistro);
+        $comprueboEmail = $this->modeloLogin->comprobarEmail($nuevoRegistro["mailNuevo"]);
+        $comprueboEmail == 1 ? $resultado = $this->modeloLogin->registroNuevoUsuario($nuevoRegistro) : $resultado = 3;
         echo $resultado;
     }
 

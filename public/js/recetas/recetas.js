@@ -28,7 +28,7 @@ $(document).ready(function () {
             }
         });
     }
-
+//TODO ELIMINAR RECETAS Y ADD NO CARGA BIEN
     function cardMaker(response) {
         if (response.length > 0) {
             for (let index = 0; index < response.length; index++) {
