@@ -67,4 +67,17 @@ class modeloListas {
         
         return $resultado;
     }
+
+    public function principalLista($id){
+        $this->db->query('UPDATE lista SET activo=0');
+        $this->db->execute();
+        $this->db->query('UPDATE lista SET activo=1 WHERE id='.$id);
+        $this->db->execute();
+    }
+
+    public function eliminarListaById($id){
+        $this->db->query('DELETE FROM lista WHERE id='.$id);
+        $resultado = $this->db->execute()==true?1:0;
+        return $resultado;
+    }
 }

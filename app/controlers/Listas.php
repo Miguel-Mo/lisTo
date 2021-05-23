@@ -53,4 +53,15 @@ class Listas extends Controlador
         $resultado = $this->modeloListas->obtenerTodasListas();
         echo json_encode($resultado);
     }
+
+    public function principalLista(){
+       $this->modeloListas->principalLista($_POST['id']);
+    }
+
+    public function eliminarLista(){
+        $resultado=$this->modeloListas->eliminarListaById($_POST['id']);
+        echo json_encode($resultado);
+     }
+
+    
 }
