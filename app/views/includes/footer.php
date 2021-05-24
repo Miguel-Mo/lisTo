@@ -49,7 +49,6 @@ $.widget.bridge('uibutton', $.ui.button)
 <script src="<?php echo RUTA_URL; ?>/public/libs/c3-0.7.20/c3.min.js"></script>
 
 <script src="<?php echo RUTA_URL; ?>/public/js/inicio/graficos/chart_donut.js"></script>
-<script src="<?php echo RUTA_URL; ?>/public/js/inicio/graficos/chart_gauge.js"></script>
 <script src="<?php echo RUTA_URL; ?>/public/js/inicio/graficos/chart_pie.js"></script>
 
 <!-- MAIN -->

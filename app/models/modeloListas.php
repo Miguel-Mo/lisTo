@@ -84,6 +84,8 @@ class modeloListas {
         $this->db->execute();
         $this->db->query('UPDATE lista SET activo=1 WHERE id='.$id);
         $this->db->execute();
+        $this->db->query('UPDATE lista SET vecesMarcadaComoActiva=(SELECT vecesMarcadaComoActiva FROM lista WHERE id='.$id.')+1 WHERE id='.$id );
+        $this->db->execute();
     }
 
     public function eliminarListaById($id){

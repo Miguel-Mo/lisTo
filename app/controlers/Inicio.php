@@ -7,7 +7,8 @@ class Inicio extends Controlador
         if (!isset($_SESSION)) {
             session_start();
         }
-        //$this->clienteModelo = $this->modelo('modeloInicio');
+        $this->modeloInicio = $this->modelo('modeloInicio');
+        $this->modeloBBDD = $this->modelo('modeloBBDD');
     }
 
     public function index()
@@ -28,5 +29,25 @@ class Inicio extends Controlador
            // 'submenu' => $this->submenu
         ];
         $this->vista('inicio/inicio', $datos);
+    }
+
+    public function obtenerDatosDonut(){
+        $resultado=$this->modeloInicio->obtenerDatosDonut();
+        $resultadoFormated=[];
+
+        for ($i=0; $i <count($resultado) ; $i++) { 
+            $resultadoFormated[]=[$resultado[$i]->nombre,$resultado[$i]->contador];
+        }
+        echo json_encode($resultadoFormated);
+    }
+
+    public function obtenerDatosGauge(){
+        $resultado=$this->modeloInicio->obtenerDatosGauge();
+        $resultadoFormated=[];
+
+        for ($i=0; $i <count($resultado) ; $i++) { 
+            $resultadoFormated[]=[$resultado[$i]->nombre,$resultado[$i]->contador];
+        }
+        echo json_encode($resultadoFormated);
     }
 }

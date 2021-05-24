@@ -9,7 +9,7 @@
 
             <!-- /.FILTER col -->
             <!-- Left col -->
-            <?php include_once(RUTA_APP . '/views/inicio/componentes/colTablaTareas.php'); ?>
+            <?php include_once(RUTA_APP . '/views/inicio/componentes/colTablaTareas.php'); ?> 
             <!-- /.Left col -->
             <!-- right col (We are only adding the ID to make the widgets sortable)-->
             <?php include_once(RUTA_APP . '/views/inicio/componentes/colDonutTareas.php'); ?>
