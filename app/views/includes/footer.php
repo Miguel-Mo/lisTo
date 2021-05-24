@@ -74,6 +74,10 @@ $.widget.bridge('uibutton', $.ui.button)
 <script src="<?php echo RUTA_URL; ?>/public/js/addLista.js"></script>
 <script src="<?php echo RUTA_URL; ?>/public/js/listas/listas.js"></script>
 
+<!-- inicio -->
+<script src="<?php echo RUTA_URL; ?>/public/js/inicio/listaActualInicio.js"></script>
+
+
 
 
 

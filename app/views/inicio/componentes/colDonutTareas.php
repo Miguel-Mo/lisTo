@@ -1,5 +1,5 @@
 <!-- right col (We are only adding the ID to make the widgets sortable)-->
-<section class="col-lg-4 connectedSortable">
+<section class="col-lg-6 connectedSortable">
     <!-- Custom tabs (Charts with tabs)-->
     <div class="card card-kiki">
         <div class="card-header">

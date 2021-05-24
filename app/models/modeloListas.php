@@ -68,6 +68,17 @@ class modeloListas {
         return $resultado;
     }
 
+    public function obtenerListaActiva(){
+        $this->db->query('SELECT * FROM lista l  
+        WHERE activo=1 AND idUsuario=' . $_SESSION['idUsuario']);
+        $resultado = $this->db->registros();
+        for ($i=0; $i < count($resultado); $i++) { 
+            $resultado[$i]->alimentosJSON=json_decode($resultado[$i]->alimentosJSON);
+        }
+        
+        return $resultado; 
+    }
+
     public function principalLista($id){
         $this->db->query('UPDATE lista SET activo=0');
         $this->db->execute();
