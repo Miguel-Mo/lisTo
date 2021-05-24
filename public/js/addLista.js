@@ -10,17 +10,15 @@ $(document).ready(function () {
             data: { idReceta: idReceta },
             dataType: "JSON",
             success: function (response) {
-                console.log('llega');
+                cargarListaTemporal();
             }
         });
-        cargarListaTemporal();
 
     })
 
     $(document).on('click', '.eli', function (event) {
         let idEliminar = $(this).data("value");
         eliminarItemListaTemporal(idEliminar);
-        cargarListaTemporal();
 
     })
 });

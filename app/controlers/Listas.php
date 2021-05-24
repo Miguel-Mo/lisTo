@@ -25,6 +25,8 @@ class Listas extends Controlador
     public function insertRecetasToListaTemporal()
     {
         $this->modeloListas->insertRecetasToListaTemporal($_POST['idReceta']);
+        echo json_encode(1);
+
     }
 
     public function traerListaTemporal()
@@ -36,6 +38,7 @@ class Listas extends Controlador
     public function eliminarItemRecetasListaTemporal()
     {
         $this->modeloListas->eliminarItemRecetasListaTemporal($_POST['idEliminar']);
+        echo json_encode(1);
     }
 
     public function procesarListaTemporal()

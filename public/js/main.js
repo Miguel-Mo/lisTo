@@ -34,7 +34,7 @@ function eliminarItemListaTemporal(idEliminar) {
         data: { idEliminar: idEliminar },
         dataType: "JSON",
         success: function (response) {
-
+            cargarListaTemporal();
         }
     });
 }
