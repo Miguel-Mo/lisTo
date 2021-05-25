@@ -47,9 +47,12 @@ class modeloListas {
     public function insertNuevaLista($arrayAlimentos){
         $jsonArray=json_encode($arrayAlimentos);
         $idUsuario=$_SESSION['idUsuario'];
-        $this->db->query("INSERT INTO lista (alimentosJSON,idUsuario)
-        VALUES ( '$jsonArray' , $idUsuario )");
+        $fechaTitulo=date("M d, Y G:i");
+        $this->db->query("INSERT INTO lista (alimentosJSON,idUsuario,tituloLista)
+        VALUES ( '$jsonArray' , $idUsuario ,'$fechaTitulo')");
         $this->db->execute();
+        $id=$this->db->lastInsertId();
+        return $id;
     }   
 
     public function eliminarListaTemporalUsuario(){

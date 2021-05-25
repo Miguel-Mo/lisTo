@@ -26,7 +26,6 @@ class Listas extends Controlador
     {
         $this->modeloListas->insertRecetasToListaTemporal($_POST['idReceta']);
         echo json_encode(1);
-
     }
 
     public function traerListaTemporal()
@@ -44,32 +43,35 @@ class Listas extends Controlador
     public function procesarListaTemporal()
     {
         $arrayAlimentos = [];
-        $arrayAlimentos=$this->modeloListas->obtenerAlimentosDesdeTemporal($_POST['arrayListIdsListaTemporal']);
-        $this->modeloListas->insertNuevaLista($arrayAlimentos);
+        $arrayAlimentos = $this->modeloListas->obtenerAlimentosDesdeTemporal($_POST['arrayListIdsListaTemporal']);
+        $idUltima=$this->modeloListas->insertNuevaLista($arrayAlimentos);
         $this->modeloListas->eliminarListaTemporalUsuario();
+        $this->modeloListas->principalLista($idUltima);
         echo json_encode(1);
         //TODO LATER AGRUPAR ALIMENTOS CON LA MISMA ID Y LUEGO CONCATENARLOS CON DIFERENTES CANTIDADES
 
     }
 
-    public function obtenerTodasListas(){
+    public function obtenerTodasListas()
+    {
         $resultado = $this->modeloListas->obtenerTodasListas();
         echo json_encode($resultado);
     }
 
-    public function obtenerListaActiva(){
+    public function obtenerListaActiva()
+    {
         $resultado = $this->modeloListas->obtenerListaActiva();
         echo json_encode($resultado);
     }
 
-    public function principalLista(){
-       $this->modeloListas->principalLista($_POST['id']);
+    public function principalLista()
+    {
+        $this->modeloListas->principalLista($_POST['id']);
     }
 
-    public function eliminarLista(){
-        $resultado=$this->modeloListas->eliminarListaById($_POST['id']);
+    public function eliminarLista()
+    {
+        $resultado = $this->modeloListas->eliminarListaById($_POST['id']);
         echo json_encode($resultado);
-     }
-
-    
+    }
 }
