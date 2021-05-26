@@ -74,11 +74,16 @@ class modeloListas {
     public function obtenerListaActiva(){
         $this->db->query('SELECT * FROM lista l  
         WHERE activo=1 AND idUsuario=' . $_SESSION['idUsuario']);
-        $resultado = $this->db->registros();
-        for ($i=0; $i < count($resultado); $i++) { 
-            $resultado[$i]->alimentosJSON=json_decode($resultado[$i]->alimentosJSON);
+        $resultado = $this->db->registro();
+        if($resultado!=""){
+            for ($i=0; $i < count($resultado); $i++) { 
+                $resultado[$i]->alimentosJSON=json_decode($resultado[$i]->alimentosJSON);
+            }
+    
+        }else{
+            $resultado=0;
         }
-        
+
         return $resultado; 
     }
 

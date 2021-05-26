@@ -62,6 +62,7 @@ class Listas extends Controlador
     {
         $resultado = $this->modeloListas->obtenerListaActiva();
         echo json_encode($resultado);
+        
     }
 
     public function principalLista()
