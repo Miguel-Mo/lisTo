@@ -19,22 +19,31 @@
                     <label for="mailNuevo" class="sr-only">Email</label>
                     <input type="email" id="mailNuevo" name="mailNuevo" class="form-control" placeholder="Email" required>
                     <br>
-                    <label for="passNuevo" class="sr-only">Password</label>
-                    <input type="password" id="passNuevo" name="passNuevo" class="form-control" placeholder="Password" required>
+                    <label for="passNuevo" class="sr-only">Contraseña</label>
+                    <input type="password" id="passNuevo" name="passNuevo" class="form-control" placeholder="Contraseña" required>
+                    <br>
+                    <label for="selectTipoAlimento" class="sr-only">Selecciona tipo de alimentación</label>
+                    <select class="form-control" id="selectTipoAlimento" name="selectTipoAlimento">
+                        <option disabled selected value="0">Selecciona tipo de alimentación</option>
+                        <option value="1">Omnívora</option>
+                        <option value="2">Vegetariana</option>
+                        <option value="3">Piscivegetariana</option>
+                        <option value="4">Ovolactovegetariano</option>
+                    </select>
                     <br>
                     <!-- <button class="btn btn-lg btn-warning btn-block" type="submit">Entrar</button> -->
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" id="registroUsuario">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" id="registroUsuario">Registarme</button>
             </div>
         </div>
     </div>
 </div>
 
 <script>
-// queda cifrar la contraseña
+    // queda cifrar la contraseña
     $(document).ready(function() {
         $(document).on('click', '#registroUsuario', function(event) {
             if ($("#inputNombreNuevo").val() != "" && $("#direccionNuevo").val() != "" && $("#mailNuevo").val() != "" && $("#passNuevo").val() != "") {
@@ -48,12 +57,12 @@
                         form: form
                     },
                     success: function(response) {
-                        if(response==1){
+                        if (response == 1) {
                             alert("usuario registrado");
                             $('#registerModal').modal('hide');
-                        }  else if(response==3){
+                        } else if (response == 3) {
                             alert("Este correo ya está registrado, prueba con otro");
-                        }else{
+                        } else {
                             alert("Ha habido un error, prueba otra vez");
                         }
 
