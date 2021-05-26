@@ -5,29 +5,34 @@ $(document).ready(function () {
         url: url + "/Inicio/obtenerDatosDonut",
         dataType: "JSON",
         success: function (response) {
-            var chart = c3.generate({
-                bindto: '#donut',
-                data: {
-                    columns: response,
-                    type: 'donut',
-                    onclick: function (d, i) {
+            if(response.length!=0){
+                var chart = c3.generate({
+                    bindto: '#donut',
+                    data: {
+                        columns: response,
+                        type: 'donut',
+                        onclick: function (d, i) {
+                        },
+                        onmouseover: function (d, i) {
+                        },
+                        onmouseout: function (d, i) {
+                        }
                     },
-                    onmouseover: function (d, i) {
+                    donut: {
+                        title: "Alimentos"
                     },
-                    onmouseout: function (d, i) {
+                    color: {
+                        pattern: ['#bdca54', '#744034', '#ffc107', '#60B044', '#80653a', '#54ca7b', '#6c2c2c'], // the three color levels for the percentage values.
+            
+                    },
+                    size: {
+                        height: 250
                     }
-                },
-                donut: {
-                    title: "Alimentos"
-                },
-                color: {
-                    pattern: ['#bdca54', '#744034', '#ffc107', '#60B044', '#80653a', '#54ca7b', '#6c2c2c'], // the three color levels for the percentage values.
-        
-                },
-                size: {
-                    height: 250
-                }
-            });
+                });
+            }else{
+                console.log("hola")
+            }
+            
 
         }
     });
