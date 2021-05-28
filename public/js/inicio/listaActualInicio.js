@@ -6,10 +6,11 @@ $(document).ready(function () {
         url: url + "/Listas/obtenerListaActiva",
         dataType: "JSON",
         success: function (response) {
-            if(response!=0){
+            if (response != 0) {
                 ingredientesLista(response);
-            }else{
-                $("#listaActualInicio").append("<p>No hay lista asignada</p>");
+            } else {
+                html = "<h3>No hay gráficos disponibles</h3>"
+                $("#listaActualInicio").append(html);
             }
         }
     });

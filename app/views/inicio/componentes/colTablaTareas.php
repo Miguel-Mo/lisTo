@@ -13,7 +13,7 @@
                 </button>
             </div>
         </div><!-- /.card-header -->
-        <div class="card-body p-0">
+        <div class="card-body">
             <div id="pie"></div>
         </div><!-- /.card-body -->
     </div>

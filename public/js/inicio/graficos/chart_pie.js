@@ -21,7 +21,8 @@ $(document).ready(function () {
                     }
                 })
             }else{
-                console.log("hoiiw")
+                html="<h3 style='color:black;'>No hay gráficos disponibles</h3>"
+                $("#pie").append(html);
             }
         }
     });

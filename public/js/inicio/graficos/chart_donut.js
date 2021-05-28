@@ -30,7 +30,8 @@ $(document).ready(function () {
                     }
                 });
             }else{
-                console.log("hola")
+                html="<h3 style='color:black;'>No hay gráficos disponibles</h3>"
+                $("#donut").append(html);
             }
             
 
