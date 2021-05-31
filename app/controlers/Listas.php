@@ -34,6 +34,11 @@ class Listas extends Controlador
         echo json_encode($resultado);
     }
 
+    public function traerBurbujaTemporal(){
+        $resultado = $this->modeloListas->traerBurbujaTemporal();
+        echo json_encode($resultado);
+    }
+
     public function eliminarItemRecetasListaTemporal()
     {
         $this->modeloListas->eliminarItemRecetasListaTemporal($_POST['idEliminar']);

@@ -4,6 +4,7 @@ $('#fechasTareas').daterangepicker();
 $('.select2').select2();
 
 cargarListaTemporal();
+cargarBurbujaTemporal();
 
 function cargarListaTemporal() {
     let url = $("#RUTA-URL").val();
@@ -27,6 +28,27 @@ function cargarListaTemporal() {
         }
     });
 }
+
+function cargarBurbujaTemporal() {
+    let url = $("#RUTA-URL").val();
+
+    $.ajax({
+        type: "POST",
+        url: url + "/Listas/traerBurbujaTemporal",
+        dataType: "JSON",
+        success: function (response) {
+            html = '<span class="badge badge-kiki navbar-badge ">' + response + '</span>';
+
+            $("#burbujaTemporal").empty();
+            $("#burbujaTemporal").append(html);
+        }
+    });
+}
+
+
+
+
+
 function eliminarItemListaTemporal(idEliminar) {
     $.ajax({
         type: "POST",

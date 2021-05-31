@@ -37,7 +37,8 @@ if (!isset($_SESSION)) {
         <li class="nav-item">
             <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
                 <i class="fas fa-th-list text-choco"></i>
-                <span class="badge badge-kiki navbar-badge ">4</span>
+                <div  id="burbujaTemporal"></div>
+                <!-- <span class="badge badge-kiki navbar-badge ">4</span> -->
             </a>
         </li>
         

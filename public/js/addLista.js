@@ -11,6 +11,7 @@ $(document).ready(function () {
             dataType: "JSON",
             success: function (response) {
                 cargarListaTemporal();
+                cargarBurbujaTemporal();
             }
         });
 

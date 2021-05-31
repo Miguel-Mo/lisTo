@@ -31,6 +31,17 @@ class modeloListas
         return $resultado;
     }
 
+    public function traerBurbujaTemporal()
+    {
+        $this->db->query('SELECT count(lt.id) as burbuja FROM lista_temporal lt
+        where lt.idUsuario=' . $_SESSION['idUsuario']);
+        $resultado = $this->db->registro();
+        $resultado=$resultado->burbuja;
+        return $resultado;
+    }
+
+    
+
     public function eliminarItemRecetasListaTemporal($idReceta)
     {
         $this->db->query('DELETE FROM lista_temporal where idUsuario=' . $_SESSION['idUsuario'] . ' AND id=' . $idReceta);
