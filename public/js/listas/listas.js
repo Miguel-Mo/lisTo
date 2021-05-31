@@ -21,7 +21,7 @@ $(document).ready(function () {
                 let html = '<div class="col-12 col-md-6">' +
                     '<div class="card" style="background-color: #FFD454; color:black">' +
                     '<div class="card-header">' +
-                    '<h5 class="card-title">' + response[index]["fechaCreacion"] + ' </h5>' + check +
+                    '<h5 class="card-title">' + response[index]["tituloLista"] + ' </h5>' + check +
                     '</div>' +
                     '<div class="card-body">' +
                     '<div class="row" id="ingredientesLista' + index + '">' +

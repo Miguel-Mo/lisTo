@@ -82,7 +82,7 @@ class modeloListas
     public function obtenerTodasListas()
     {
         $this->db->query('SELECT * FROM lista l  
-        WHERE  idUsuario=' . $_SESSION['idUsuario'] . ' ORDER BY fechaCreacion DESC');
+        WHERE  idUsuario=' . $_SESSION['idUsuario'] . ' ORDER BY fechaCreacion DESC LIMIT 10');
         $resultado = $this->db->registros();
         for ($i = 0; $i < count($resultado); $i++) {
             $resultado[$i]->alimentosJSON = json_decode($resultado[$i]->alimentosJSON);
