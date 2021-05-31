@@ -67,6 +67,7 @@ $.widget.bridge('uibutton', $.ui.button)
 
 <!-- jsRecetas -->
 <script src="<?php echo RUTA_URL; ?>/public/js/recetas/addRecetas.js"></script>
+<script src="<?php echo RUTA_URL; ?>/public/js/recetas/editReceta.js"></script>
 <script src="<?php echo RUTA_URL; ?>/public/js/recetas/recetas.js"></script>
 
 <!-- jsLista -->

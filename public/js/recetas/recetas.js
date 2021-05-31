@@ -94,11 +94,7 @@ $(document).ready(function () {
     });
 
 
-    $(document).on('click', '.editarReceta', function (event) {
-        event.preventDefault();
-        let id = $(this).attr("value");
-        alert("Todavia no se puede editar la receta "+id+". Estamos trabajando en ello");
-    });
+
 
     function eliminarReceta(id) {
         Swal.fire({

@@ -60,4 +60,20 @@ class modeloRecetas
         $resultado = $this->db->registros();
         return $resultado;
     }
+
+    public function obtenerRecetaIndividual($idReceta){
+        $this->db->query('SELECT r.id,r.nombre,r.dificultad,t.tiempo FROM receta r  
+        LEFT JOIN tiempo_aproximado t ON r.tiempoEstimado=t.id
+        WHERE  idUsuario=' . $_SESSION['idUsuario'].' AND r.id='.$idReceta);
+        $resultado = $this->db->registro();
+        return $resultado;
+    }
+
+    public function obtenerAlimentosRecetasEditar($idReceta){
+        $this->db->query('SELECT ra.* FROM receta_alimento ra  
+        WHERE  idReceta='.$idReceta);
+        $resultado = $this->db->registros();
+        return $resultado;
+    }
+
 }
