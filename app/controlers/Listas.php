@@ -63,6 +63,12 @@ class Listas extends Controlador
         echo json_encode($resultado);
     }
 
+    public function obtenerListaIndividual()
+    {
+        $resultado = $this->modeloListas->obtenerListaIndividual($_POST['id']);
+        echo json_encode($resultado);
+    }
+
     public function obtenerListaActiva()
     {
         $resultado = $this->modeloListas->obtenerListaActiva();
@@ -79,5 +85,12 @@ class Listas extends Controlador
     {
         $resultado = $this->modeloListas->eliminarListaById($_POST['id']);
         echo json_encode($resultado);
+    }
+
+    public function editListaSave(){
+        $this->modeloListas->eliminarListaById($_POST['idLista']);
+        $idUltima=$this->modeloListas->insertNuevaListaEditada($_POST);
+        $this->modeloListas->principalLista($idUltima);
+        redireccionar('/Listas');
     }
 }

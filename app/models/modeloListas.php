@@ -36,11 +36,11 @@ class modeloListas
         $this->db->query('SELECT count(lt.id) as burbuja FROM lista_temporal lt
         where lt.idUsuario=' . $_SESSION['idUsuario']);
         $resultado = $this->db->registro();
-        $resultado=$resultado->burbuja;
+        $resultado = $resultado->burbuja;
         return $resultado;
     }
 
-    
+
 
     public function eliminarItemRecetasListaTemporal($idReceta)
     {
@@ -73,6 +73,30 @@ class modeloListas
         return $id;
     }
 
+    public function insertNuevaListaEditada($datos)
+    {
+        $arrayAlimentos=[];
+        for ($i=0; $i <count($datos['nuevaCantidad']) ; $i++) { 
+            $object= new \stdClass;
+            $object->nombre=$datos['nuevoNombre'][$i];
+            $object->idAlimento=0;
+            $object->cantidad=$datos['nuevaCantidad'][$i];
+            $object->unidadMedida=0;
+            $object->descripcion=$datos['nuevaDescripcion'][$i];
+            array_push($arrayAlimentos,$object);
+        }
+        $jsonArray = json_encode($arrayAlimentos);
+        $idUsuario = $_SESSION['idUsuario'];
+        $fechaTitulo = $datos['tituloLista'];
+        $this->db->query("INSERT INTO lista (alimentosJSON,idUsuario,tituloLista)
+        VALUES ( '$jsonArray' , $idUsuario ,'$fechaTitulo')");
+        $this->db->execute();
+        $id = $this->db->lastInsertId();
+        return $id;
+    }
+
+    
+
     public function eliminarListaTemporalUsuario()
     {
         $this->db->query('DELETE FROM lista_temporal where idUsuario=' . $_SESSION['idUsuario']);
@@ -90,6 +114,20 @@ class modeloListas
 
         return $resultado;
     }
+
+    public function obtenerListaIndividual($id)
+    {
+        $this->db->query('SELECT * FROM lista l  
+        WHERE  idUsuario=' . $_SESSION['idUsuario'] . ' AND id=' . $id);
+        $resultado = $this->db->registro();
+
+        $resultado->alimentosJSON = json_decode($resultado->alimentosJSON);
+
+        return $resultado;
+    }
+
+
+
 
     public function obtenerListaActiva()
     {

@@ -9,4 +9,6 @@
         <!-- /.row (main row) -->
     </div><!-- /.container-fluid -->
 </section>
+<?php require_once(RUTA_APP . '/views/listas/modales/editLista.php') ?>
+
 <!-- /.content -->
