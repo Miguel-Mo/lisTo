@@ -17,7 +17,9 @@ $(document).ready(function () {
         if (response.length > 0) {
             for (let index = 0; index < response.length; index++) {
                 var check = response[index]['activo'];
-                check == 1 ? check = '<i class="ml-2 fas fa-check"></i>' : check = "";
+                var display = response[index]['activo'];
+                check == 1 ? check = '<i class="ml-2 fas fa-star"></i>' : check = "";
+                display == 1 ? display = 'none' : display = "inline";
                 let html = '<div class="col-12 col-md-6">' +
                     '<div class="card" style="background-color: #FFD454; color:black">' +
                     '<div class="card-header">' +
@@ -29,7 +31,7 @@ $(document).ready(function () {
                     '<div class="d-flex flex-row-reverse">' +
                     '<a href="#" value=' + response[index]["id"] + ' class="btn card-link btn-primary ml-1 editarLista">Editar</a>' +
                     '<a href="#" value=' + response[index]["id"] + ' class="btn card-link btn-danger eliminarLista">Eliminar</a>' +
-                    '<a href="#" value=' + response[index]["id"] + ' class="btn card-link btn-success principalLista">Marcar como principal</a>' +
+                    '<a href="#" value=' + response[index]["id"] + ' class="btn card-link btn-success principalLista" style="display:'+display+'">Marcar como principal</a>' +
                     '<button id="button1" onclick="CopyToClipboard(' + `'` + '#ingredientesLista' + index + `'` + ')">Click to copy</button>' +
                     '</div>' +
                     '</div>' +
