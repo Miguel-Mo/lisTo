@@ -11,7 +11,7 @@
 <script src="<?php echo RUTA_URL; ?>/public/vendor/almasaeed2010/adminlte/plugins/jquery-ui/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
-$.widget.bridge('uibutton', $.ui.button)
+    $.widget.bridge('uibutton', $.ui.button)
 </script>
 <!-- Bootstrap 4 -->
 <script src="<?php echo RUTA_URL; ?>/public/vendor/almasaeed2010/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js">
@@ -23,15 +23,13 @@ $.widget.bridge('uibutton', $.ui.button)
 <script src="<?php echo RUTA_URL; ?>/public/vendor/almasaeed2010/adminlte/plugins/daterangepicker/daterangepicker.js">
 </script>
 <!-- Tempusdominus Bootstrap 4 -->
-<script
-    src="<?php echo RUTA_URL; ?>/public/vendor/almasaeed2010/adminlte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js">
+<script src="<?php echo RUTA_URL; ?>/public/vendor/almasaeed2010/adminlte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js">
 </script>
 <!-- Summernote -->
 <script src="<?php echo RUTA_URL; ?>/public/vendor/almasaeed2010/adminlte/plugins/summernote/summernote-bs4.min.js">
 </script>
 <!-- overlayScrollbars -->
-<script
-    src="<?php echo RUTA_URL; ?>/public/vendor/almasaeed2010/adminlte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js">
+<script src="<?php echo RUTA_URL; ?>/public/vendor/almasaeed2010/adminlte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js">
 </script>
 <!-- AdminLTE App -->
 <!-- <script src="<?php echo RUTA_URL; ?>/public/vendor/almasaeed2010/adminlte/dist/js/adminlte.min.js"></script> -->
@@ -77,12 +75,9 @@ $.widget.bridge('uibutton', $.ui.button)
 <!-- inicio -->
 <script src="<?php echo RUTA_URL; ?>/public/js/inicio/listaActualInicio.js"></script>
 
-
-
-
-
 <!-- Select2 -->
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
 
 </body>
 

@@ -15,6 +15,7 @@
                             <input type="text" id="nombreEdit" name="nombreNuevo" class="form-control" placeholder="Nombre del Receta" required>
                         </div>
 
+                        <input type="hidden" id="idRecetaEdit" name="idRecetaEdit">
 
                         <div class="col-12 mb-2">
                             <label for="dificultad">Dificultad</label>
@@ -42,15 +43,15 @@
                         <!--cargar los alimentos tambien falta buscador en esta vista-->
 
                         <div class="col-6 mt-2">
-                            <select class="selectIngredienteEdit" name="ingredienteReceta[]" id="ingredienteReceta1edit" required>
+                            <select class="selectIngredienteEdit" name="ingredienteReceta[]" id="ingredienteReceta0Edit" required>
                                 <option></option>
                             </select>
                         </div>
                         <div class="col-3 mt-2">
-                            <input type="text" name="cantidadReceta[]" id="cantidadReceta1edit" placeholder="Cantidad" class="form-control" required>
+                            <input type="text" name="cantidadReceta[]" id="cantidadReceta0Edit" placeholder="Cantidad" class="form-control" required>
                         </div>
                         <div class="col-3 mt-2">
-                            <select class="selectUnidadEdit" name="unidadMedidaReceta[]" id="unidadMedidaReceta1edit" required>
+                            <select class="selectUnidadEdit" name="unidadMedidaReceta[]" id="unidadMedidaReceta0Edit" required>
                                 <option></option>
                             </select>
                         </div>

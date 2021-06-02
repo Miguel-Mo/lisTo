@@ -35,6 +35,17 @@ class Recetas extends Controlador
         redireccionar('/Recetas');
     }
 
+    public function editNuevoReceta()
+    {
+        $this->modeloRecetas->updateReceta($_POST);
+        $this->modeloRecetas->eliminarAlimentosReceta($_POST['idRecetaEdit']);
+
+        for ($i = 0; $i < count($_POST['ingredienteReceta']); $i++) {
+            $this->modeloRecetas->insertAlimentoReceta($_POST['ingredienteReceta'][$i], $_POST['cantidadReceta'][$i], $_POST['unidadMedidaReceta'][$i], $_POST['idRecetaEdit']);
+        }
+        redireccionar('/Recetas');
+    }
+
     public function obtenerTodasRecetas()
     {
         $resultado = $this->modeloRecetas->obtenerTodasRecetas();
