@@ -70,7 +70,9 @@ class modeloRecetas
     }
 
     public function obtenerAlimentosRecetasEditar($idReceta){
-        $this->db->query('SELECT ra.* FROM receta_alimento ra  
+        $this->db->query('SELECT ra.*,a.nombre,um.descripcion FROM receta_alimento ra  
+        LEFT JOIN alimento a ON ra.idAlimento=a.id
+        LEFT JOIN unidad_medida um ON ra.idUnidadMedida=um.id
         WHERE  idReceta='.$idReceta);
         $resultado = $this->db->registros();
         return $resultado;

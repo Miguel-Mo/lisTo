@@ -11,9 +11,10 @@ $(document).ready(function () {
         allowClear: true
     });
 
-    $(document).on('click', '.editarReceta', function (event) {
+    $(document).on('click', '.editarReceta', async function (event) {
         event.preventDefault();
         let id = $(this).attr("value");
+        await cargarSelects();
         $.ajax({
             type: "POST",
             url: url + "/Recetas/obtenerRecetaIndividual",
@@ -28,6 +29,8 @@ $(document).ready(function () {
                 $('#ingredienteReceta1edit').val(parseInt(response['alimentos'][0]['idAlimento']));
                 $('#ingredienteReceta1edit').trigger('change');
                 $('#cantidadReceta1edit').val(response['alimentos'][0]['cantidad']);
+                $('#unidadMedidaReceta1edit').val(parseInt(response['alimentos'][0]['idUnidadMedida']));
+                $('#unidadMedidaReceta1edit').trigger('change');
 
 
 //                 ingredienteReceta1edit
@@ -35,12 +38,7 @@ $(document).ready(function () {
 // unidadMedidaReceta1edit
 
 
-                for (let index = 1; index < response['alimentos'].length; index++) {
-                    
-                    
-                }
 
-                cargarSelects();
                 $('#editRecetaModal').modal('toggle');
             }
         });
@@ -49,9 +47,9 @@ $(document).ready(function () {
 
     });
 
-    function cargarSelects() {
+    async function cargarSelects() {
         let url = $("#RUTA-URL").val();
-        $.ajax({
+        await $.ajax({
             type: "POST",
             url: url + "/Alimentos/obtenerTiposyAlimentosRecetas",
             dataType: "JSON",

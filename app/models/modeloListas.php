@@ -48,7 +48,7 @@ class modeloListas
         $this->db->execute();
     }
 
-    public function obtenerAlimentosDesdeTemporal($idListaTemporal)
+    public function obtenerAlimentosDesdeTemporal()
     {
         $this->db->query('SELECT a.nombre,ra.idAlimento,SUM(ra.cantidad) as cantidad,um.id as unidadMedida,um.descripcion FROM lista_temporal lt
         LEFT JOIN receta r ON lt.idReceta=r.id

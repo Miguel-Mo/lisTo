@@ -34,7 +34,8 @@ class Listas extends Controlador
         echo json_encode($resultado);
     }
 
-    public function traerBurbujaTemporal(){
+    public function traerBurbujaTemporal()
+    {
         $resultado = $this->modeloListas->traerBurbujaTemporal();
         echo json_encode($resultado);
     }
@@ -48,10 +49,11 @@ class Listas extends Controlador
     public function procesarListaTemporal()
     {
         $arrayAlimentos = [];
-        $arrayAlimentos = $this->modeloListas->obtenerAlimentosDesdeTemporal($_POST['arrayListIdsListaTemporal']);
-        $idUltima=$this->modeloListas->insertNuevaLista($arrayAlimentos);
+        $arrayAlimentos = $this->modeloListas->obtenerAlimentosDesdeTemporal();
+        $idUltima = $this->modeloListas->insertNuevaLista($arrayAlimentos);
         $this->modeloListas->eliminarListaTemporalUsuario();
         $this->modeloListas->principalLista($idUltima);
+
         echo json_encode(1);
         //TODO LATER AGRUPAR ALIMENTOS CON LA MISMA ID Y LUEGO CONCATENARLOS CON DIFERENTES CANTIDADES
 
@@ -61,6 +63,22 @@ class Listas extends Controlador
     {
         $resultado = $this->modeloListas->obtenerTodasListas();
         echo json_encode($resultado);
+
+        // foreach ($resultados as $resultado) {
+        //     $resultado->alimentosJSONFormateados= [];
+
+        //     foreach ($resultado->alimentosJSON as $ali) {
+        //         $elementos = $resultado->alimentosJSONFormateados->$ali['nombre'] ?? "";
+        //         $linea = "";
+        //         if ($elementos != "") {
+        //             $linea .= ", ";
+        //         }
+
+        //         $elementos .= $linea . $ali->cantidad . " de " . $ali->descripcion;
+        //         $resultado->alimentosJSONFormateados->$ali['nombre']=$elementos;
+        //     }
+        // }
+
     }
 
     public function obtenerListaIndividual()
@@ -73,7 +91,6 @@ class Listas extends Controlador
     {
         $resultado = $this->modeloListas->obtenerListaActiva();
         echo json_encode($resultado);
-        
     }
 
     public function principalLista()
@@ -87,9 +104,10 @@ class Listas extends Controlador
         echo json_encode($resultado);
     }
 
-    public function editListaSave(){
+    public function editListaSave()
+    {
         $this->modeloListas->eliminarListaById($_POST['idLista']);
-        $idUltima=$this->modeloListas->insertNuevaListaEditada($_POST);
+        $idUltima = $this->modeloListas->insertNuevaListaEditada($_POST);
         $this->modeloListas->principalLista($idUltima);
         redireccionar('/Listas');
     }

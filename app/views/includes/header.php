@@ -70,6 +70,8 @@ if ($_SESSION['token_control'] != 1) {
     <!-- ESPECIAL KIKI -->
     <link rel="stylesheet" href="<?php echo RUTA_URL; ?>/public/css/cardkiki.css">
     <link rel="stylesheet" href="<?php echo RUTA_URL; ?>/public/css/cardchoco.css">
+    <link rel="stylesheet" href="<?php echo RUTA_URL; ?>/public/css/select2-custom.css">
+
 
 
 </head>
