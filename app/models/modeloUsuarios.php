@@ -71,9 +71,6 @@ class modeloUsuarios{
                         AND idUsuario != 1';
 
         $this->db->query($query);
-        // $this->db->bind(':idContacto', $id);
-        // $this->db->bind(':datos', $datos);
-
         return $this->db->execute();
     }
 

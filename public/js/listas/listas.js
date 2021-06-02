@@ -31,8 +31,8 @@ $(document).ready(function () {
                     '<div class="d-flex flex-row-reverse">' +
                     '<a href="#" value=' + response[index]["id"] + ' class="btn card-link btn-primary ml-1 editarLista">Editar</a>' +
                     '<a href="#" value=' + response[index]["id"] + ' class="btn card-link btn-danger eliminarLista">Eliminar</a>' +
-                    '<a href="#" value=' + response[index]["id"] + ' class="btn card-link btn-success principalLista" style="display:'+display+'">Marcar como principal</a>' +
-                    '<button id="button1" onclick="CopyToClipboard(' + `'` + '#ingredientesLista' + index + `'` + ')">Click to copy</button>' +
+                    '<a href="#" value=' + response[index]["id"] + ' class="btn card-link btn-success principalLista" style="display:'+display+'">Principal</a>' +
+                    '<button class="btn card-link btn-info copyLi" value=' + index + ' " >Copiar</button>' +
                     '</div>' +
                     '</div>' +
                     '</div>' +
@@ -170,9 +170,16 @@ $(document).ready(function () {
     });
 
 
+    $(document).on('click', '.copyLi', function (event) {
+        let id = $(this).attr("value");
+        id="ingredientesLista"+id;
+        CopyToClipboard(id);
+    });
+    
 
 
     function CopyToClipboard(containerid) {
+        console.log("hola")
         if (document.selection) {
             var range = document.body.createTextRange();
             range.moveToElementText(document.getElementById(containerid));
