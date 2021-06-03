@@ -34,7 +34,7 @@ $(document).ready(function () {
             for (let index = 0; index < response.length; index++) {
                 var dificultad = response[index]["dificultad"];
                 dificultadFormated = dificultad == 1 ? 'Fácil <i class="fas fa-dot-circle" style="color: green;"></i>' : dificultad == 2 ? 'Normal <i class="fas fa-dot-circle" style="color: orange;"></i>' : 'Difícil <i class="fas fa-dot-circle" style="color: red;"></i>';
-                let html = '<div class="col-12 col-md-6">' +
+                let html = '<div class="col-12 col-md-4">' +
                     '<div class="card" style="background-color: #FFD454; color:black">' +
                     '<div class="card-header">' +
                     '<h5 class="card-title">' + response[index]["nombre"] + '</h5> ' +
@@ -44,16 +44,16 @@ $(document).ready(function () {
                     //<!-- <i class="fas fa-window-minimize"></i> -->
                     '</div>' +
                     '</div>' +
-                    '<div class="card-body">' +
+                    '<div class="card-body" style="background-color: #FFDB6E;">' +
 
                     '<p class="card-text">Tiempo aproximado: ' + response[index]["tiempo"] + ' <br> Dificultad:' + dificultadFormated + '</p>' +
                     '<div class="row collapse" id="receta' + index + '">' +
 
                     '</div>' +
                     '<div class="d-flex flex-row-reverse">' +
-                    '<a href="#" value='+response[index]["id"]+ ' class="btn card-link btn-primary ml-1 editarReceta">Editar Receta</a>' +
-                    '<a href="#" value='+response[index]["id"]+ ' class="btn card-link btn-danger eliminarReceta">Eliminar Receta</a>' +
-                    '<a type="button" value='+response[index]["id"]+ ' class="btn card-link btn-success ml-2 addListaTemp text-white"><i class="far fa-check-square"></i> Añadir a la lista</a>'+
+                    '<a href="#" value='+response[index]["id"]+ ' class="btn card-link btn-primary ml-3 editarReceta" title="Editar Receta"><i class="fas fa-edit"></i></a>' +
+                    '<a href="#" value='+response[index]["id"]+ ' class="btn card-link btn-danger eliminarReceta" title="Eliminar Receta"><i class="far fa-trash-alt"></i></a>' +
+                    '<a type="button" value='+response[index]["id"]+ ' class="btn card-link btn-success  addListaTemp text-white" title="Añadir a la lista"><i class="far fa-check-square"></i> </a>'+
                     ' </div>' +
                     '</div>' +
                     '</div>' +

@@ -71,6 +71,10 @@
     border-top: 3px solid #b4c434;
 }
 
+.sinMargenCard{
+    margin-left:0rem !important;
+}
+
 .card.bg-kiki .bootstrap-datetimepicker-widget .table td,
 .card.bg-kiki .bootstrap-datetimepicker-widget .table th,
 .card.bg-gradient-kiki .bootstrap-datetimepicker-widget .table td,

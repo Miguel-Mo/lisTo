@@ -50,7 +50,7 @@ $(document).ready(function () {
 
                 let html = '<div class="col-lg-3 col-12">' +
                     '<div class="card card text-center">' +
-                    '<div class="card-body">' +
+                    '<div class="card-body" style="background-color:#FFDB6E;color:black">' +
                     '<b>' + response['Xdefecto'][index]['nombre'] + '</b> ' +
                     eliminar +
                     '<p>(' + response['Xdefecto'][index]['tipo'] + ')</p>' +

@@ -20,19 +20,19 @@ $(document).ready(function () {
                 var display = response[index]['activo'];
                 check == 1 ? check = '<i class="ml-2 fas fa-star"></i>' : check = "";
                 display == 1 ? display = 'none' : display = "inline";
-                let html = '<div class="col-12 col-md-6">' +
+                let html = '<div class="col-12 col-md-4">' +
                     '<div class="card" style="background-color: #FFD454; color:black">' +
                     '<div class="card-header">' +
                     '<h5 class="card-title">' + response[index]["tituloLista"] + ' </h5>' + check +
                     '</div>' +
-                    '<div class="card-body">' +
+                    '<div class="card-body" style="background-color: #FFDB6E;">' +
                     '<div class="row" id="ingredientesLista' + index + '">' +
                     '</div>' +
-                    '<div class="d-flex flex-row-reverse">' +
-                    '<a href="#" value=' + response[index]["id"] + ' class="btn card-link btn-primary ml-1 editarLista">Editar</a>' +
-                    '<a href="#" value=' + response[index]["id"] + ' class="btn card-link btn-danger eliminarLista">Eliminar</a>' +
-                    '<a href="#" value=' + response[index]["id"] + ' class="btn card-link btn-success principalLista" style="display:'+display+'">Principal</a>' +
-                    '<button class="btn card-link btn-info copyLi" value=' + index + ' " >Copiar</button>' +
+                    '<div class="d-flex flex-row-reverse ">' +
+                    '<a href="#" value=' + response[index]["id"] + ' class="btn card-link btn-primary ml-3 editarLista" title="Editar"><i class="fas fa-edit"></i></a>' +
+                    '<a href="#" value=' + response[index]["id"] + ' class="btn card-link btn-danger eliminarLista" title="Eliminar"><i class="far fa-trash-alt"></i></a>' +
+                    '<a href="#" value=' + response[index]["id"] + ' class="btn card-link btn-success principalLista" title="Principal" style="display:' + display + '"><i class="far fa-star"></i></a>' +
+                    '<button class="btn card-link btn-info copyLi" title="Copiar" value=' + index + ' " ><i class="far fa-clipboard"></i></button>' +
                     '</div>' +
                     '</div>' +
                     '</div>' +
@@ -172,10 +172,10 @@ $(document).ready(function () {
 
     $(document).on('click', '.copyLi', function (event) {
         let id = $(this).attr("value");
-        id="ingredientesLista"+id;
+        id = "ingredientesLista" + id;
         CopyToClipboard(id);
     });
-    
+
 
 
     function CopyToClipboard(containerid) {
@@ -185,12 +185,27 @@ $(document).ready(function () {
             range.moveToElementText(document.getElementById(containerid));
             range.select().createTextRange();
             document.execCommand("copy");
+
+            $(document).Toasts('create', {
+                class: 'bg-info',
+                title: 'Toast Title',
+                subtitle: 'Subtitle',
+                body: 'Texto copiado al portapapeles'
+            })
         } else if (window.getSelection) {
             var range = document.createRange();
             range.selectNode(document.getElementById(containerid));
             window.getSelection().addRange(range);
             document.execCommand("copy");
-            alert("Text has been copied, now paste in the text-area")
+
+            $(document).Toasts('create', {
+                title: 'Texto copiado al portapapeles',
+                class: 'bg-info',
+                autohide: true,
+                delay: 1250,
+            })
+
+            // alert("Text has been copied, now paste in the text-area")
         }
     }
 
