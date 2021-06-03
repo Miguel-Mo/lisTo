@@ -1,13 +1,21 @@
 <?php
-
+/**
+ * Clase login para logear y registrar usuario
+ */
 class Login extends Controlador
 {
+    /**
+     * constructor para poder llamar a modelo login
+     */
     public function __construct()
     {
         $this->modeloLogin = $this->modelo('modeloLogin');
-        $this->modeloRecetas = $this->modelo('modeloRecetas');
+        // $this->modeloRecetas = $this->modelo('modeloRecetas');
     }
 
+    /**
+     * index que carga la vista login y si se esta logueado te redirecciona a la vista de inicio
+     */
     public function index()
     {
         if (!isset($_SESSION)) {
@@ -23,6 +31,12 @@ class Login extends Controlador
         $this->vista('login/login', $datos);
     }
 
+    /**
+     * Metodo para acceder. Lo que hago es comparar la contraseña y el email que me han enviado con la bbdd
+     * Para comprobar contraseñas hago un passwrod verify y php hace su trabajo si es correscto valido la sesion
+     * y doy un token control (1) Inicio la sesion y redirecciono  a inicio
+     * si no es correcto redirecciono a login con el metodo vaciar
+     */
     public function acceder()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -59,6 +73,10 @@ class Login extends Controlador
         }
     }
 
+    /**
+     * metodo para registro de nuevo usuario, primero compruebo que el email que se va a registrar no est en la bbdd
+     * si esta no se registra, si no está empiezo el proceso de registro
+     */
     public function registroNuevoUsuario()
     {
         parse_str($_POST['form'], $nuevoRegistro);
@@ -68,6 +86,11 @@ class Login extends Controlador
     }
 
 
+    /**
+     * vaciar
+     * metodo que nos saca de la aplicacion y nos desloguea destruye la sesion 
+     * y nois redirecciona
+     */
 
     public function vaciar()
     {

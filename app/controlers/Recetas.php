@@ -1,7 +1,14 @@
 <?php
-
+/**Recetas
+ * Clase de retas que nos sirve como CRUD de recetas, como para cargar las recetas en pantalla
+ */
 class Recetas extends Controlador
 {
+        /**
+     * Constructor que nos carga el modelo bbdd y el modeloRecetas
+     * para poder llamarlo durante la clase, también hace un session start 
+     * inicializando los valores de session
+     */
     public function __construct()
     {
         if (!isset($_SESSION)) {
@@ -13,6 +20,10 @@ class Recetas extends Controlador
         $this->modeloAlimentos = $this->modelo('modeloAlimentos');
     }
 
+        /**
+     * Index
+     * Nos cargala vista de recetas
+     */
     public function index()
     {
         if (!isset($_SESSION)) {
@@ -24,7 +35,11 @@ class Recetas extends Controlador
     }
 
 
-
+/**addNuevoReceta
+ * metodo para añadir nueva receta
+ * tengo que hacer un for en mitad para insertar los alimentos uno por uno en la tabla intermedia
+ * alimentos recetas
+ */
     public function addNuevoReceta()
     {
         $idReceta = $this->modeloRecetas->insertNuevaReceta($_POST);
@@ -35,6 +50,11 @@ class Recetas extends Controlador
         redireccionar('/Recetas');
     }
 
+    /**editNuevoReceta
+     * metodo para editar una receta. primero updateo la informacion de la receta luego elimino los alimentos
+     * de la tabla intermedia
+     * luego vuelvo a hacer un for para insertar los alimentos uno a uno
+     */
     public function editNuevoReceta()
     {
         $this->modeloRecetas->updateReceta($_POST);
@@ -46,12 +66,18 @@ class Recetas extends Controlador
         redireccionar('/Recetas');
     }
 
+    /**obtenerTodasRecetas
+     * Metodo para obetenr las recetas y cargarlas en pantalla
+     */
     public function obtenerTodasRecetas()
     {
         $resultado = $this->modeloRecetas->obtenerTodasRecetas();
         echo json_encode($resultado);
     }
 
+    /**obtenerAlimentosRecetas
+     * Metodo para obtener los alimentos y cargarlos en las recetas
+     */
     public function obtenerAlimentosRecetas()
     {
         $idReceta = $_POST['idReceta'];
@@ -60,18 +86,30 @@ class Recetas extends Controlador
     }
 
 
+    /**eliminarReceta
+     * Metodo para eliminar recetas
+     */
     public function eliminarReceta()
     {
         $resultado = $this->modeloRecetas->eliminarRecetaById($_POST['id']);
         echo $resultado;
     }
 
+    /**obtenerFiltroRecetas
+     * Metodo para obtener recetas filtradas despues de utilizar el buscador
+     */
     public function obtenerFiltroRecetas()
     {
         $resultado = $this->modeloRecetas->obtenerRecetasFiltro($_POST);
         echo json_encode($resultado);
     }
 
+    /**obtenerRecetaIndividual
+     * Aqui obtengo una receta individual para editarla
+     * hago una ñapa para el tiempo, debido a que no tengo creado en la bbdd una tabla de tiempos, posiblemente
+     * en el futuro deba crearla
+     * por otro lado obtengo laa receta y los alimentos y formo un array asociativa para enviarselo al js y que este lo trabaje
+     */
     public function obtenerRecetaIndividual()
     {
         $receta = $this->modeloRecetas->obtenerRecetaIndividual($_POST['id']);

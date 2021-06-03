@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Clase para ampliación de cara a una posible incorporación
+ * de rol Administrador o una posible ampliación con una vista de 
+ * configuración
+ */
 class Configuracion extends Controlador
 {
     public function __construct()
@@ -8,11 +13,6 @@ class Configuracion extends Controlador
             session_start();
         }
         $this->modeloUsuarios = $this->modelo('modeloUsuarios');
-        // $this->modeloAlimentos = $this->modelo('modeloAlimentos');
-        $this->modeloRecetas = $this->modelo('modeloRecetas');
-        $this->modeloEmpleados = $this->modelo('modeloEmpleados');
-        $this->modeloZonas = $this->modelo('modeloZonas');
-        $this->modeloTiposTarea = $this->modelo('modeloTiposTarea');
     }
 
     public function index()
@@ -23,8 +23,6 @@ class Configuracion extends Controlador
 
         $datos = [
            'usuarios' => $this->modeloUsuarios->obtenerUsuarios(),
-           'zonas' => $this->modeloZonas->obtenerZonas(),
-           'tareas_tipos' => $this->modeloTiposTarea->obtenerTiposTarea(),
         ];
         $this->vista('configuracion/configuracion', $datos);
     }
